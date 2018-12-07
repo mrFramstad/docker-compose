@@ -1,0 +1,108 @@
+default_view:
+  view: true
+  icon: mdi:lightbulb-outline
+  name: Lys
+  entities:
+    - group.Lys_stue  
+    - group.Lys_spisestue
+    - group.Lys_gang
+
+Main_media:
+  view: yes
+  icon: mdi:music-note
+  name: Media
+  entities:
+    - group.all_devices
+    - group.all_remotes
+    - group.media
+
+Main_nfo:
+  view: true
+  icon: mdi:information-outline
+  name: Info
+  entities:
+    - group.Main_google_wifi
+    - group.Main_vret_yr
+    - group.Main_garage_door
+
+Main_setings:
+  view: true
+  icon: mdi:settings
+  name: Settings
+  entities:
+    - group.Main_z_wave
+
+#group:
+#  default_view:
+#    view: true
+#    icon: mdi:home
+
+Media:
+  icon: mdi:music-note
+  name: Media
+  entities:
+    - media_player.apple_tv
+    - media_player.apple_tv_2
+    - media_player.chromecast_kjkken
+    - media_player.familie
+    - media_player.kjkken
+    - media_player.kjkken_2
+    - media_player.stue
+    - remote.apple_tv
+    - remote.apple_tv_2
+
+Lys_stue:
+  icon: mdi:readability
+  name: Stue
+  entities: 
+    - light.hjrnelampe
+
+Lys_spisestue:
+  icon: mdi:readability
+  name: Spisestue
+  entities: 
+    - light.fibaro_system_fgd212_dimmer_2_level_2
+
+Lys_gang:
+  icon: mdi:readability
+  name: Gang
+  entities: 
+    - light.fibaro_system_fgd212_dimmer_2_level_4
+    - binary_sensor.fibaro_system_fgms001zw5_motion_sensor_sensor
+    - sensor.fibaro_system_fgms001zw5_motion_sensor_burglar
+    - sensor.fibaro_system_fgms001zw5_motion_sensor_luminance
+    - sensor.fibaro_system_fgms001zw5_motion_sensor_seismic_intensity
+    - sensor.fibaro_system_fgms001zw5_motion_sensor_temperature
+
+Main_vret_yr:
+  name: Vær fra YR.no
+  entities:
+    - sensor.vret_humidity
+    - sensor.vret_precipitation
+    - sensor.vret_pressure
+    - sensor.vret_symbol
+    - sensor.vret_temperature
+    - sensor.vret_wind_direction
+    - sensor.vret_wind_speed
+    - sun.sun
+
+Main_google_wifi:
+  name: Google WiFi
+  entities:
+    - sensor.google_wifi_current_version
+    - sensor.google_wifi_last_restart
+    - sensor.google_wifi_local_ip
+    - sensor.google_wifi_new_version
+    - sensor.google_wifi_status
+    - sensor.google_wifi_uptime
+
+Main_garage_door:
+  name: Garasjen min
+  entities:
+    - garage_door.last_message
+    - script.garage_door_trigger
+
+Main_z_wave:
+  name: Z-wave stick
+  entities:
+    - zwave.aeotec_zw090_zstick_gen5_eu

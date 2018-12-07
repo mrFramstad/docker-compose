@@ -1,0 +1,56 @@
+# Example .gitignore file for your config dir.
+# A * ensures that everything will be ignored.
+*
+
+# You can whitelist files/folders with !, these will not be ignored.
+!*.yaml
+!.gitignore
+!*.md
+!Home-AssistantConfig/
+!Home-AssistantConfig/*
+!Home-AssistantConfig/custom_components/
+!Home-AssistantConfig/custom_components*
+!mariaDb/
+!mariaDb/*
+!mqtt/
+!mqtt/*
+!mqtt/config/
+!mqtt/config*
+!mqtt/data/
+!mqtt/data/*
+!mqtt/log/
+!mqtt/log/*
+!/
+!*
+
+# Ignore folders.
+Home-AssistantConfig/.storage
+Home-AssistantConfig/.cloud
+Home-AssistantConfig/deps
+Home-AssistantConfig/tts
+mariaDb/homeassdb/
+mariaDb/mysql/
+mariaDb/performance_schema/
+__pycache__/
+
+
+# Ensure these files are ignored, otherwise your secret data/credentials will leak.
+ip_bans.yaml
+secrets.yaml
+known_devices.yaml
+.uuid
+.HA_VERSION
+home-assistant.log
+.env
+.DS_Store
+aria_log.00000001
+aria_log_control
+ib_buffer_pool
+ib_logfile0
+ib_logfile1
+ibdata1
+multi-master.info
+mosquitto.db
+mosquitto.log
+home-assistant_v2.db
+

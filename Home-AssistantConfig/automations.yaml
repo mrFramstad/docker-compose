@@ -1,0 +1,57 @@
+- id: Lights_on_in_the_morning_on_motion
+  alias: Lys på om morgenen ved bevegelse
+  trigger:
+  - entity_id: binary_sensor.fibaro_system_fgms001zw5_motion_sensor_sensor
+    from: 'off'
+    platform: state
+    to: 'on'
+  condition:
+  - condition: state
+    entity_id: light.fibaro_system_fgd212_dimmer_2_level_2
+    state: 'off'
+  - after: 06:40:00
+    before: '22:00:00'
+    condition: time
+  action:
+  - data:
+      brightness: 150
+      entity_id:
+      - light.fibaro_system_fgd212_dimmer_2_level_2
+      - light.fibaro_system_fgd212_dimmer_2_level_4
+      - light.hjrnelampe
+      transition: 5
+    service: light.turn_on
+- id: Lights_on_in_the_night_on_motion
+  alias: Lys av i gang etter 30 sekunder uten bevelgese
+  trigger:
+  - entity_id: binary_sensor.fibaro_system_fgms001zw5_motion_sensor_sensor
+    platform: state
+    to: 'on'
+  condition:
+  - condition: state
+    entity_id: light.fibaro_system_fgd212_dimmer_2_level_4
+    state: 'off'
+  - after: '22:00:00'
+    before: 06:30:00
+    condition: time
+  action:
+  - data:
+      brightness: 28
+      entity_id: light.fibaro_system_fgd212_dimmer_2_level_4
+      transition: 2
+    service: light.turn_on
+  - delay: 00:00:30
+  - data:
+      entity_id: light.fibaro_system_fgd212_dimmer_2_level_4
+    service: light.turn_off
+- id: Close_garage_door_on_sundown
+  alias: Lukk garasje ved solnedgang
+  trigger:
+  - event: sunset
+    platform: sun
+  condition:
+  - condition: state
+    entity_id: garage_door.last_message
+    state: Open
+  action:
+  - service: garage_door.trigger_door

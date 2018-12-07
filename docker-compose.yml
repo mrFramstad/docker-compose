@@ -1,0 +1,46 @@
+version: '3.7'
+services:
+  db:
+    container_name: mariaDb
+    image: mariadb
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_USER: ${MYSQL_USER}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
+      TZ: ${TZ}
+    volumes:
+      - ./mariaDb:/var/lib/mysql
+    ports:
+      - 3306:3306
+
+  mqtt:
+    container_name: mosquitto
+    image: eclipse-mosquitto:latest
+    restart: always
+    volumes:
+      - ./mqtt/config:/mosquitto/config
+      - ./mqtt/data:/mosquitto/data
+      - ./mqtt/log:/mosquitto/log
+    ports:
+      - 1883:1883
+      - 9001:9001
+
+  homeassistant:
+    container_name: home-assistant
+    image: homeassistant/home-assistant
+    restart: always
+    links:
+      - db:db
+      - mqtt:mqtt 
+    environment:
+      TZ: ${TZ}
+    volumes:
+      - ./Home-AssistantConfig:/config
+    ports:
+      - 8123:8123
+    #devices:
+    #  - /dev/ttyUSB0:/dev/ttyUSB0
+    #  - /dev/ttyUSB1:/dev/ttyUSB1
+    #  - /dev/ttyACM0:/dev/ttyACM0

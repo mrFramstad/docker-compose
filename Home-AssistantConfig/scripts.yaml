@@ -1,0 +1,11 @@
+garage_door_trigger:
+  sequence:
+    - service: mqtt.publish
+      data_template:
+        topic: '/connectedGarageDoor/trigger'
+        payload: 'Triggering'
+    - service: notify.notify
+      data:
+        message: 'Garasjeporten er trigget!'
+
+
