@@ -39,7 +39,9 @@ sensor.google_wifi_status:
   friendly_name: Status
 sensor.google_wifi_uptime:
   friendly_name: Oppetid
+
 garage_door.last_message:
   friendly_name: Garasjeportstatus
+
 light.fibaro_system_fgd212_dimmer_2_level_2:
   friendly_name: Spisebordslampe

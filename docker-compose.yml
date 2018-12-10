@@ -31,6 +31,7 @@ services:
     container_name: home-assistant
     image: homeassistant/home-assistant
     restart: always
+    #network_mode: host
     links:
       - db:db
       - mqtt:mqtt 
@@ -40,7 +41,5 @@ services:
       - ./Home-AssistantConfig:/config
     ports:
       - 8123:8123
-    #devices:
-    #  - /dev/ttyUSB0:/dev/ttyUSB0
-    #  - /dev/ttyUSB1:/dev/ttyUSB1
-    #  - /dev/ttyACM0:/dev/ttyACM0
+    devices:
+     - /dev/ttyACM0:/dev/ttyACM0

@@ -53,4 +53,10 @@ multi-master.info
 mosquitto.db
 mosquitto.log
 home-assistant_v2.db
+._.env
+OZW_Log.txt
+options.xml
+pyozw.sqlite
+ibtmp1
+tc.log
 
