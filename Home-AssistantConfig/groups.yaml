@@ -61,18 +61,16 @@ Lys_spisestue:
   icon: mdi:readability
   name: Spisestue
   entities: 
-    - light.fibaro_system_fgd212_dimmer_2_level_2
+    - light.fibaro_system_fgd212_dimmer_2_level_3
+    
 
 Lys_gang:
   icon: mdi:readability
   name: Gang
   entities: 
     - light.fibaro_system_fgd212_dimmer_2_level_4
-    - binary_sensor.fibaro_system_fgms001zw5_motion_sensor_sensor
-    - sensor.fibaro_system_fgms001zw5_motion_sensor_burglar
-    - sensor.fibaro_system_fgms001zw5_motion_sensor_luminance
-    - sensor.fibaro_system_fgms001zw5_motion_sensor_seismic_intensity
     - sensor.fibaro_system_fgms001zw5_motion_sensor_temperature
+    - binary_sensor.fibaro_system_fgms001zw5_motion_sensor_sensor
 
 Main_vret_yr:
   name: Vær fra YR.no

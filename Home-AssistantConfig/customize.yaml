@@ -43,5 +43,11 @@ sensor.google_wifi_uptime:
 garage_door.last_message:
   friendly_name: Garasjeportstatus
 
-light.fibaro_system_fgd212_dimmer_2_level_2:
+light.fibaro_system_fgd212_dimmer_2_level_3:
   friendly_name: Spisebordslampe
+
+light.fibaro_system_fgd212_dimmer_2_level_4:
+  friendly_name: Gang
+
+sensor.fibaro_system_fgms001zw5_motion_sensor_temperature:
+  friendly_name: Tempratur gang

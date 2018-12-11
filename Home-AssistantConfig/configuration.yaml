@@ -106,6 +106,26 @@ recorder:
 # Cloud
 cloud:
 
+#apple_tv:
+#  - host: IP_1
+#    login_id: LOGIN_ID_1
+#    name: NAME_1
+#    start_off: START_OFF_1
+#    credentials: CREDENTIALS_1
+#  - host: IP_2
+#    login_id: LOGIN_ID_2
+#    name: NAME_2
+#    start_off: START_OFF_2
+#    credentials: CREDENTIALS_2
+
+sonos:
+  media_player:
+    hosts:
+      - 192.168.86.97
+      - 192.168.86.42
+
+apple_tv:
+
 panel_iframe:
   configurator:
     title: Configurator
