@@ -34,7 +34,7 @@ mariaDb/performance_schema/
 __pycache__/
 
 
-# Ensure these files are ignored, otherwise your secret data/credentials will leak.
+# Ensure these files are ignored
 ip_bans.yaml
 secrets.yaml
 known_devices.yaml
@@ -43,13 +43,8 @@ known_devices.yaml
 home-assistant.log
 .env
 .DS_Store
-aria_log.00000001
-aria_log_control
-ib_buffer_pool
-ib_logfile0
-ib_logfile1
-ibdata1
-multi-master.info
+aria*
+ib*
 mosquitto.db
 mosquitto.log
 home-assistant_v2.db
@@ -59,4 +54,8 @@ options.xml
 pyozw.sqlite
 ibtmp1
 tc.log
+Home-AssistantConfig/zwcfg_**.xml
+Home-AssistantConfig/zwcfg_0xd6ca4344.xml
+._configuration.yaml
+._*
 

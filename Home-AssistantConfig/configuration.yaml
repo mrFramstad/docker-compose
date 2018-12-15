@@ -37,6 +37,8 @@ updater:
 
 # Discover some devices automatically
 discovery:
+    enable:
+    - homekit
 
 # Allows you to issue voice commands from the frontend in enabled browsers
 conversation:
@@ -54,8 +56,6 @@ logger:
 
 # Enables a map showing the location of tracked devices
 map:
-
-ios:
 
 mqtt:
   broker: !secret mqttBroker
@@ -124,8 +124,14 @@ sonos:
       - 192.168.86.97
       - 192.168.86.42
 
+ios:
 apple_tv:
+#  - host: 192.168.86.62
+#    name: stua
 
+tibber:
+  access_token: !secret tibberToken
+ 
 panel_iframe:
   configurator:
     title: Configurator

@@ -16,7 +16,7 @@
   - data:
       brightness: 150
       entity_id:
-      - light.fibaro_system_fgd212_dimmer_2_level_2
+      - light.fibaro_system_fgd212_dimmer_2_level_3
       - light.fibaro_system_fgd212_dimmer_2_level_4
       - light.hjrnelampe
       transition: 5

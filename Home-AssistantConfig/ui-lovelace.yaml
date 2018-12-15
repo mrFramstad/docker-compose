@@ -1,0 +1,86 @@
+title: Casa Framstad
+views:
+  - title: Lys
+    id: lys
+    name: Lys
+    panel: false
+    icon: mdi:lightbulb-outline
+  #- type: vertical-stack
+    cards:
+      - type: light     
+        entity: light.hjrnelampe
+        title: Stue 
+      - type: light     
+        entity: light.fibaro_system_fgd212_dimmer_2_level_3      
+      - type: light     
+        entity: light.fibaro_system_fgd212_dimmer_2_level_4      
+      - type: sensor
+        entity: sensor.fibaro_system_fgms001zw5_motion_sensor_temperature
+        name: Temperatur
+        height: 62
+      - type: history-graph
+        title: Bevegelse i gangen
+        entities:
+          - sensor.outside_temperature
+          - binary_sensor.fibaro_system_fgms001zw5_motion_sensor_sensor
+ 
+  - title: Media
+    id: Media
+    icon: mdi:music-note
+    cards: 
+      - type: media-control
+        entity: media_player.stue
+      - type: media-control
+        entity: media_player.kjkken
+ 
+  - title: Info
+    id: info
+    icon: mdi:information-outline
+    cards:
+      - type: entities
+        title: Vær fra YR.no
+        entities:
+          - sensor.vret_humidity
+          - sensor.vret_precipitation
+          - sensor.vret_pressure
+          - sensor.vret_symbol
+          - sensor.vret_temperature
+          - sensor.vret_wind_direction
+          - sensor.vret_wind_speed
+          - sun.sun
+      - type: entities
+        title: Google WiFi
+        entities: 
+          - sensor.google_wifi_current_version
+          - sensor.google_wifi_last_restart
+          - sensor.google_wifi_local_ip
+          - sensor.google_wifi_new_version
+          - sensor.google_wifi_status
+          - sensor.google_wifi_uptime
+      - type: entities
+        title: Garasjen min
+        entities:
+          - garage_door.last_message
+          - script.garage_door_trigger
+      - type: sensor
+        entity: sensor.electricity_price_tyslevveien_59_f
+        name: Strømpris
+        height: 62
+
+
+  - title: Settings
+    id: Settings
+    icon: mdi:settings
+    cards:
+      - type: entities
+        title: Z-wave
+        entities: 
+          - zwave.aeotec_zw090_zstick_gen5_eu
+          - zwave.fibaro_system_fgd212_dimmer_2
+          - zwave.fibaro_system_fgd212_dimmer_2_2
+          - zwave.fibaro_system_fgms001zw5_motion_sensor
+
+
+
+      
+
