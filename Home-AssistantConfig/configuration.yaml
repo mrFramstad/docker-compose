@@ -36,9 +36,9 @@ updater:
   # include_used_components: true
 
 # Discover some devices automatically
-discovery:
-    enable:
-    - homekit
+discovery: 
+   #enable:
+   # - homekit
 
 # Allows you to issue voice commands from the frontend in enabled browsers
 conversation:
@@ -91,6 +91,11 @@ sensor:
 #      - dewpointTemperature
   
   - platform: google_wifi
+  - platform: speedtest
+    monitored_conditions:
+      - ping
+      - download
+      - upload
 
 # Text to speech
 tts:
@@ -131,7 +136,8 @@ apple_tv:
 
 tibber:
   access_token: !secret tibberToken
- 
+
+      
 panel_iframe:
   configurator:
     title: Configurator

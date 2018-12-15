@@ -6,14 +6,13 @@ views:
     panel: false
     icon: mdi:lightbulb-outline
   #- type: vertical-stack
-    cards:
-      - type: light     
-        entity: light.hjrnelampe
-        title: Stue 
-      - type: light     
-        entity: light.fibaro_system_fgd212_dimmer_2_level_3      
-      - type: light     
-        entity: light.fibaro_system_fgd212_dimmer_2_level_4      
+    cards:  
+      - type: entities
+        name: Lys
+        entities:
+          - light.hjrnelampe
+          - light.fibaro_system_fgd212_dimmer_2_level_3
+          - light.fibaro_system_fgd212_dimmer_2_level_4
       - type: sensor
         entity: sensor.fibaro_system_fgms001zw5_motion_sensor_temperature
         name: Temperatur
@@ -51,6 +50,9 @@ views:
       - type: entities
         title: Google WiFi
         entities: 
+          - sensor.speedtest_download
+          - sensor.speedtest_ping
+          - sensor.speedtest_upload
           - sensor.google_wifi_current_version
           - sensor.google_wifi_last_restart
           - sensor.google_wifi_local_ip
@@ -66,7 +68,6 @@ views:
         entity: sensor.electricity_price_tyslevveien_59_f
         name: Strømpris
         height: 62
-
 
   - title: Settings
     id: Settings
