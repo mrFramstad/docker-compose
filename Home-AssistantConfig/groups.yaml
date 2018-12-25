@@ -41,15 +41,15 @@ Media:
   icon: mdi:music-note
   name: Media
   entities:
-    - media_player.apple_tv
-    - media_player.apple_tv_2
-    - media_player.chromecast_kjkken
-    - media_player.familie
+    #- media_player.apple_tv
+    #- media_player.apple_tv_2
+    #- media_player.chromecast_kjkken
+    #- media_player.familie
     - media_player.kjkken
-    - media_player.kjkken_2
+    #- media_player.kjkken_2
     - media_player.stue
-    - remote.apple_tv
-    - remote.apple_tv_2
+    #- remote.apple_tv
+    #- remote.apple_tv_2
 
 Lys_stue:
   icon: mdi:readability
@@ -61,16 +61,14 @@ Lys_spisestue:
   icon: mdi:readability
   name: Spisestue
   entities: 
-    - light.fibaro_system_fgd212_dimmer_2_level_3
+    - light.dimmer_diningtable
     
 
 Lys_gang:
   icon: mdi:readability
   name: Gang
   entities: 
-    - light.fibaro_system_fgd212_dimmer_2_level_4
-    - sensor.fibaro_system_fgms001zw5_motion_sensor_temperature
-    - binary_sensor.fibaro_system_fgms001zw5_motion_sensor_sensor
+    - light.dimmer_hall
 
 Main_vret_yr:
   name: Vær fra YR.no

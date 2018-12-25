@@ -1,16 +1,16 @@
 - id: Lights_on_in_the_morning_on_motion_weekdays
   alias: Lys på om morgenen ved bevegelse i ukedager
   trigger:
-  - entity_id: binary_sensor.fibaro_system_fgms001zw5_motion_sensor_sensor
+  - entity_id: binary_sensor.motion_hall
     from: 'off'
     platform: state
     to: 'on'
   condition:
   - condition: state
-    entity_id: light.fibaro_system_fgd212_dimmer_2_level_2
+    entity_id: light.dimmer_hall
     state: 'off'
-  - after: 06:40:00
-    before: '22:00:00'
+  - after: 08:30:00
+    before: '09:00:00'
     condition: time
   - condition: time
     weekday:
@@ -23,8 +23,8 @@
   - data:
       brightness: 150
       entity_id:
-      - light.fibaro_system_fgd212_dimmer_2_level_3
-      - light.fibaro_system_fgd212_dimmer_2_level_4
+      - light.dimmer_hall
+      - light.dimmer_diningtable
       - light.hjrnelampe
       transition: 10
     service: light.turn_on
@@ -32,16 +32,16 @@
 - id: Lights_on_in_the_morning_on_motion_weekends
   alias: Lys på om morgenen ved bevegelse i helg
   trigger:
-  - entity_id: binary_sensor.fibaro_system_fgms001zw5_motion_sensor_sensor
+  - entity_id: binary_sensor.motion_hall
     from: 'off'
     platform: state
     to: 'on'
   condition:
   - condition: state
-    entity_id: light.fibaro_system_fgd212_dimmer_2_level_2
+    entity_id: light.dimmer_hall
     state: 'off'
   - after: 08:30:00
-    before: '22:00:00'
+    before: '09:00:00'
     condition: time
   - condition: time
     weekday:
@@ -51,8 +51,8 @@
   - data:
       brightness: 150
       entity_id:
-      - light.fibaro_system_fgd212_dimmer_2_level_3
-      - light.fibaro_system_fgd212_dimmer_2_level_4
+      - light.dimmer_hall
+      - light.dimmer_diningtable
       - light.hjrnelampe
       transition: 10
     service: light.turn_on
@@ -60,25 +60,25 @@
 - id: Lights_on_in_the_night_on_motion
   alias: Lys av i gang etter 30 sekunder uten bevelgese
   trigger:
-  - entity_id: binary_sensor.fibaro_system_fgms001zw5_motion_sensor_sensor
+  - entity_id: binary_sensor.motion_hall
     platform: state
     to: 'on'
   condition:
   - condition: state
-    entity_id: light.fibaro_system_fgd212_dimmer_2_level_4
+    entity_id: light.dimmer_hall
     state: 'off'
   - after: '22:00:00'
-    before: 06:30:00
+    before: 09:00:00
     condition: time
   action:
   - data:
       brightness: 28
-      entity_id: light.fibaro_system_fgd212_dimmer_2_level_4
+      entity_id: light.dimmer_hall
       transition: 2
     service: light.turn_on
   - delay: 00:00:30
   - data:
-      entity_id: light.fibaro_system_fgd212_dimmer_2_level_4
+      entity_id: light.dimmer_hall
     service: light.turn_off
 
 - id: Close_garage_door_on_sundown

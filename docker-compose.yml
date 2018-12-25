@@ -40,6 +40,6 @@ services:
     volumes:
       - ./Home-AssistantConfig:/config
     ports:
-      - 8123:8123
+      - 80:8123
     devices:
      - /dev/ttyACM0:/dev/ttyACM0

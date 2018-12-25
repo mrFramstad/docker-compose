@@ -1,7 +1,7 @@
 title: Casa Framstad
 views:
   - title: Lys
-    id: lys
+    path: lys
     name: Lys
     panel: false
     icon: mdi:lightbulb-outline
@@ -11,20 +11,27 @@ views:
         name: Lys
         entities:
           - light.hjrnelampe
-          - light.fibaro_system_fgd212_dimmer_2_level_3
-          - light.fibaro_system_fgd212_dimmer_2_level_4
+          - light.dimmer_diningtable
+          - light.dimmer_hall
       - type: sensor
-        entity: sensor.fibaro_system_fgms001zw5_motion_sensor_temperature
-        name: Temperatur
-        height: 62
+        entity: sensor.temprature_hall
+        name: Temperatur      
+        accuracy: 500
+        detail: 2
+        graph: line
+      - type: sensor
+        name: Utetempratur
+        entity: sensor.vret_temperature
+        accuracy: 500
+        detail: 2
+        graph: line
       - type: history-graph
         title: Bevegelse i gangen
         entities:
-          - sensor.outside_temperature
-          - binary_sensor.fibaro_system_fgms001zw5_motion_sensor_sensor
+          - binary_sensor.motion_hall
  
   - title: Media
-    id: Media
+    path: Media
     icon: mdi:music-note
     cards: 
       - type: media-control
@@ -33,7 +40,7 @@ views:
         entity: media_player.kjkken
  
   - title: Info
-    id: info
+    path: info
     icon: mdi:information-outline
     cards:
       - type: entities
@@ -67,10 +74,11 @@ views:
       - type: sensor
         entity: sensor.electricity_price_tyslevveien_59_f
         name: Strømpris
-        height: 62
-
+        accuracy: 500
+        detail: 2
+        graph: line
   - title: Settings
-    id: Settings
+    path: Settings
     icon: mdi:settings
     cards:
       - type: entities
