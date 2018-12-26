@@ -26,6 +26,17 @@ lovelace:
 # Enables configuration UI
 config:
 
+device_tracker:
+  - platform: googlehome
+    host: 192.168.86.219
+
+zone:
+  - name: Home
+    latitude: !secret myLatitude
+    longitude: !secret myLongitude
+    radius: 100
+    icon: mdi:account-multiple
+    
 # Uncomment this if you are using SSL/TLS, running in Docker container, etc.
 http:
   api_password: !secret apiPassword

@@ -1,5 +1,34 @@
 title: Casa Framstad
 views:
+  - title: Home
+    path: home
+    name: Hjem
+    icon: mdi:home-circle
+    cards: 
+      - type: vertical-stack
+        cards:
+          - type: map
+            aspect_ratio: 16:9
+            default_zoom: 15
+            entities:
+              - device_tracker.19216886219_d4a33d2d1078
+              - device_tracker.kristoffer_sin_iphone
+              - zone.home
+          - type: horizontal-stack
+            cards:
+              - type: sensor
+                entity: sensor.temprature_hall
+                name: Temperatur      
+                accuracy: 500
+                detail: 2
+                graph: line
+              - type: sensor
+                name: Utetempratur
+                entity: sensor.vret_temperature
+                accuracy: 500
+                detail: 2
+                graph: line   
+  
   - title: Lys
     path: lys
     name: Lys
@@ -39,6 +68,15 @@ views:
       - type: media-control
         entity: media_player.kjkken
  
+  - title: Telefoner
+    path: phones
+    icon: mdi:cellphone-iphone
+    cards: 
+      - type: entities
+        entities: 
+          - sensor.kristoffer_sin_iphone_battery_level
+          - sensor.kristoffer_sin_iphone_battery_state
+    
   - title: Info
     path: info
     icon: mdi:information-outline
