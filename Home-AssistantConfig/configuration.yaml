@@ -18,6 +18,7 @@ homeassistant:
 
 # Enables the frontend
 frontend:
+  themes: !include themes.yaml
   
 lovelace:
   mode: yaml
@@ -87,12 +88,6 @@ sensor:
       - pressure
       - windDirection
       - humidity
-#      - fog
-#      - cloudiness
-#      - lowClouds
-#      - mediumClouds
-#      - highClouds
-#      - dewpointTemperature
   
   - platform: google_wifi
   - platform: speedtest
@@ -115,18 +110,6 @@ recorder:
 # Cloud
 cloud:
 
-#apple_tv:
-#  - host: IP_1
-#    login_id: LOGIN_ID_1
-#    name: NAME_1
-#    start_off: START_OFF_1
-#    credentials: CREDENTIALS_1
-#  - host: IP_2
-#    login_id: LOGIN_ID_2
-#    name: NAME_2
-#    start_off: START_OFF_2
-#    credentials: CREDENTIALS_2
-
 sonos:
   media_player:
     hosts:
@@ -141,6 +124,9 @@ apple_tv:
 tibber:
   access_token: !secret tibberToken
 
+wunderlist:
+  client_id: !secret wunderListClientId
+  access_token: !secret wunderListToken
       
 panel_iframe:
   configurator:

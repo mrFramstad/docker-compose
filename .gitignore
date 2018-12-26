@@ -55,6 +55,7 @@ pyozw.sqlite
 ibtmp1
 tc.log
 Home-AssistantConfig/zwcfg_**.xml
+zwcfg_*.xml
 Home-AssistantConfig/zwcfg_0xd6ca4344.xml
 ._configuration.yaml
 ._*
