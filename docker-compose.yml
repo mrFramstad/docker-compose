@@ -31,7 +31,6 @@ services:
     container_name: home-assistant
     image: homeassistant/home-assistant
     restart: always
-    #network_mode: host
     links:
       - db:db
       - mqtt:mqtt 
@@ -39,7 +38,9 @@ services:
       TZ: ${TZ}
     volumes:
       - ./Home-AssistantConfig:/config
+      - /etc/letsencrypt:/etc/letsencrypt
     ports:
       - 80:8123
+      - 443:443
     devices:
      - /dev/ttyACM0:/dev/ttyACM0

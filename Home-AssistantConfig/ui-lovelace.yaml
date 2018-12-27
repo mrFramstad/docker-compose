@@ -7,6 +7,14 @@ views:
     cards: 
       - type: vertical-stack
         cards:
+          - type: entity-filter
+            card: glance
+            card_config:
+              title: Hvem er hjemme?
+            entities:
+              - device_tracker.19216886219_d4a33d2d1078
+            state_filter:
+              - home          
           - type: map
             aspect_ratio: 16:9
             default_zoom: 15
