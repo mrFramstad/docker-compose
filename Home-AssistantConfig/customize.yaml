@@ -51,3 +51,13 @@ light.fibaro_system_fgd212_dimmer_2_level_4:
 
 sensor.fibaro_system_fgms001zw5_motion_sensor_temperature:
   friendly_name: Tempratur gang
+
+scene.day:
+  friendly_name: Dag  
+  icon: mdi:weather-sunny
+scene.evening:
+  friendly_name: Kveld  
+  icon: mdi:weather-night
+scene.night:
+  friendly_name: Natt  
+  icon: mdi:hotel   

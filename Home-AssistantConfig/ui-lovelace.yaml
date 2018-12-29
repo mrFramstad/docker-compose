@@ -22,6 +22,9 @@ views:
               - device_tracker.19216886219_d4a33d2d1078
               - device_tracker.kristoffer_sin_iphone
               - zone.home
+ 
+      - type: vertical-stack
+        cards:
           - type: horizontal-stack
             cards:
               - type: sensor
@@ -42,30 +45,60 @@ views:
     name: Lys
     panel: false
     icon: mdi:lightbulb-outline
-  #- type: vertical-stack
-    cards:  
-      - type: entities
-        name: Lys
-        entities:
-          - light.hjrnelampe
-          - light.dimmer_diningtable
-          - light.dimmer_hall
-      - type: sensor
-        entity: sensor.temprature_hall
-        name: Temperatur      
-        accuracy: 500
-        detail: 2
-        graph: line
-      - type: sensor
-        name: Utetempratur
-        entity: sensor.vret_temperature
-        accuracy: 500
-        detail: 2
-        graph: line
-      - type: history-graph
-        title: Bevegelse i gangen
-        entities:
-          - binary_sensor.motion_hall
+    cards: 
+      - type: vertical-stack
+        cards:
+          - type: glance
+            name: Scene
+            entities:   
+              - entity: scene.day
+                tap_action:
+                  action: call-service
+                  service: scene.turn_on
+                  service_data: {"entity_id": "scene.day"}
+              - entity: scene.night
+                tap_action:
+                  action: call-service
+                  service: scene.turn_on
+                  service_data: {"entity_id": "scene.night"}
+              - entity: scene.evening
+                tap_action:
+                  action: call-service
+                  service: scene.turn_on
+                  service_data: {"entity_id": "scene.evening"}
+          
+          - type: horizontal-stack
+            cards:
+              - type: light
+                entity: light.dimmer_diningtable
+              - type: light
+                entity: light.dimmer_hall
+          - type: horizontal-stack
+            cards:
+              - type: light
+                entity: light.hjrnelampe
+      
+          - type: history-graph
+            title: Bevegelse i gangen
+            entities:
+              - binary_sensor.motion_hall
+      
+      - type: vertical-stack
+        cards:      
+          - type: sensor
+            entity: sensor.temprature_hall
+            name: Temperatur      
+            accuracy: 500
+            detail: 2
+            graph: line
+          - type: sensor
+            name: Utetempratur
+            entity: sensor.vret_temperature
+            accuracy: 500
+            detail: 2
+            graph: line
+
+
  
   - title: Media
     path: Media

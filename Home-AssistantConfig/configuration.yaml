@@ -146,3 +146,37 @@ panel_iframe:
 group: !include groups.yaml
 automation: !include automations.yaml
 script: !include scripts.yaml
+
+scene:
+  - name: Day
+    entities:
+      light.dimmer_hall: 
+        state: true
+        brightness:  180
+      light.dimmer_diningtable:
+        state: true
+        brightness:  180
+      light.hjrnelampe:
+        state: true
+        brightness:  180
+  - name: Night
+    entities:
+      light.dimmer_hall: false
+      light.dimmer_diningtable: false
+      light.hjrnelampe: false
+  - name: Evening
+    entities:
+      light.dimmer_hall: 
+        state: true
+        brightness:  100
+      light.dimmer_diningtable:
+        state: true
+        brightness:  100
+      light.hjrnelampe:
+        state: true
+        min_mireds": 153
+        max_mireds": 500
+        brightness": 144
+        color_temp": 443
+
+      
