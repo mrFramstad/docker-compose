@@ -43,15 +43,15 @@ sensor.google_wifi_uptime:
 garage_door.last_message:
   friendly_name: Garasjeportstatus
 
-light.fibaro_system_fgd212_dimmer_2_level_3:
-  friendly_name: Spisebordslampe
+light.dimmer_diningtable:
+  friendly_name: Dining table lamp
 
-light.fibaro_system_fgd212_dimmer_2_level_4:
-  friendly_name: Gang
+light.dimmer_hall:
+  friendly_name: Hall lamp
 
-sensor.fibaro_system_fgms001zw5_motion_sensor_temperature:
-  friendly_name: Tempratur gang
-
+light.hjrnelampe:
+  friendly_name: Corner lamp
+ 
 scene.day:
   friendly_name: Dag  
   icon: mdi:weather-sunny
@@ -61,3 +61,8 @@ scene.evening:
 scene.night:
   friendly_name: Natt  
   icon: mdi:hotel   
+  #entity_picture: /local/stoffer.png
+  
+device.kristoffer:
+  friendly.name: Kristoffer
+  entity_picture: /local/stoffer.png

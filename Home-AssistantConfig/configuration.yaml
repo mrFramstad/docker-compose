@@ -23,13 +23,13 @@ lovelace:
 # Enables configuration UI
 config:
 
-device_tracker:
-  - platform: googlehome
-    host: 192.168.86.219
-    interval_seconds: 10
-    consider_home: 180
-    new_device_defaults:
-      track_new_devices: true
+#device_tracker:
+#  - platform: googlehome
+#    host: 192.168.86.219
+#    interval_seconds: 10
+#    consider_home: 180
+#    new_device_defaults:
+#      track_new_devices: true
 
 zone:
   - name: Home
@@ -84,6 +84,12 @@ sun:
 garage_door:
   status_topic: /connectedGarageDoor/status
 
+ifttt:
+  key: !secret iftttApiKey
+  
+# My personal device tracker
+wifi_device_tracker:
+  
 # Weather prediction
 sensor:
   - platform: yr
@@ -118,7 +124,28 @@ recorder:
 
 # Cloud
 cloud:
-
+  google_actions:
+    filter:
+      include_entities:
+        - light.dimmer_diningtable
+        - light.dimmer_hall
+        - light.hjrnelampe
+        - scene.day
+        - scene.evening
+        - scene.light
+      include_domains:
+        - switch
+        - scene
+      #exclude_entities:
+        #- switch.outside
+    #entity_config:
+      #switch.kitchen:
+      #  name: Custom Name for Google Assistant
+      #  aliases:
+      #   - bright lights
+      #   - entry lights
+      #  room: living room
+  
 sonos:
   media_player:
     hosts:
@@ -147,36 +174,83 @@ group: !include groups.yaml
 automation: !include automations.yaml
 script: !include scripts.yaml
 
+
+light:
+  - platform: group
+    name: Hall Lights
+    entities:
+      - light.dimmer_hall
+  - platform: group
+    name: Dining Room Lights
+    entities:
+      - light.dimmer_diningtable
+  - platform: group
+    name: Living Room Lights
+    entities:
+      - light.hjrnelampe
+  - platform: group
+    name: Living Room Lights
+    entities:
+      - light.kitchen_bench
+  - platform: group
+    name: All Lights
+    entities:
+      - light.dimmer_hall
+      - light.dimmer_diningtable
+      - light.hjrnelampe 
+      - light.kitchen_bench    
+      
 scene:
   - name: Day
     entities:
       light.dimmer_hall: 
         state: true
-        brightness:  180
+        brightness: 180
       light.dimmer_diningtable:
         state: true
-        brightness:  180
+        brightness: 180
       light.hjrnelampe:
         state: true
-        brightness:  180
+        brightness: 180
+        color_temp: 320
+      light.kitchen_bench:
+        state: true
+        color_temp: 320
+        brightness: 180
+
+  - name: Evening
+    entities:
+      light.dimmer_hall: 
+        state: true
+        brightness: 100
+      light.dimmer_diningtable:
+        state: true
+        brightness: 100
+      light.hjrnelampe:
+        state: true
+        brightness: 100
+        color_temp: 380
+      light.kitchen_bench:
+        state: true
+        color_temp: 380
+        brightness: 80
+
   - name: Night
     entities:
       light.dimmer_hall: false
       light.dimmer_diningtable: false
       light.hjrnelampe: false
-  - name: Evening
+      light.kitchen_bench: false
+
+  - name: Test
     entities:
-      light.dimmer_hall: 
+      light.kitchen_bench:  
         state: true
-        brightness:  100
-      light.dimmer_diningtable:
-        state: true
-        brightness:  100
-      light.hjrnelampe:
-        state: true
-        min_mireds": 153
-        max_mireds": 500
-        brightness": 144
-        color_temp": 443
+        color_temp: 380
+        brightness: 80
+
+          
+
+
 
       
