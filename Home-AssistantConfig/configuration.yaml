@@ -42,9 +42,11 @@ http:
   api_password: !secret apiPassword
   #base_url: http://ha.framstad.com
   base_url: https://ha.framstad.com
-  #ssl_certificate: /etc/letsencrypt/live/framstad.com/fullchain.pem
-  #ssl_certificate: /etc/letsencrypt/live/framstad.com/cert.pem
-  #ssl_key: /etc/letsencrypt/live/framstad.com/privkey.pem
+  ssl_certificate: /etc/letsencrypt/live/framstad.com/fullchain.pem
+  ssl_key: /etc/letsencrypt/live/framstad.com/privkey.pem
+  #ssl_certificate: /etc/letsencrypt/live/framstad.com-0002/fullchain.pem
+  #ssl_key: /etc/letsencrypt/live/framstad.com-0002/privkey.pem
+  
 
 updater:
   include_used_components: true
@@ -149,7 +151,7 @@ cloud:
 sonos:
   media_player:
     hosts:
-      - 192.168.86.97
+      - 192.168.86.233
       - 192.168.86.42
 
 ios:

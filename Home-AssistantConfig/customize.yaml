@@ -61,8 +61,4 @@ scene.evening:
 scene.night:
   friendly_name: Natt  
   icon: mdi:hotel   
-  #entity_picture: /local/stoffer.png
-  
-device.kristoffer:
-  friendly.name: Kristoffer
-  entity_picture: /local/stoffer.png
+

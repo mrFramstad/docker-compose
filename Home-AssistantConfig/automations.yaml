@@ -103,4 +103,8 @@
   action:
     service_template: '{{ trigger.event.data.service }}'
     data_template:
-      entity_id: '{{ trigger.event.data.entity_id }}'
+      mac: '{{ trigger.event.data.mac }}'
+      dev_id: '{{ trigger.event.data.dev_id }}'
+      host_name: '{{ trigger.event.data.host_name }}'
+      location_name: '{{ trigger.event.data.location_name }}'
+
