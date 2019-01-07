@@ -41,7 +41,11 @@ views:
               action: call-service
               service: scene.turn_on
               service_data: {"entity_id": "scene.test"}
-     
+      - type: glance
+        name: Trikk fra Sæter
+        entities:
+          - sensor.trikk_fra_ster_ster_platform_12349
+
       - type: vertical-stack
         cards:
           - type: horizontal-stack
@@ -58,6 +62,13 @@ views:
                 accuracy: 500
                 detail: 2
                 graph: line   
+      - type: map
+        aspect_ratio: 16:9
+        default_zoom: 15
+        entities:
+          - device_tracker.kristoffer_sin_iphone
+          - device_tracker.linus_sin_iphone  
+          #- zone.home     
   
   - title: Lys
     path: lys
@@ -86,6 +97,13 @@ views:
                   service: scene.turn_on
                   service_data: {"entity_id": "scene.night"}
            
+          - type: entities
+            entities:
+              - light.dimmer_diningtable
+              - light.kitchen_bench
+              - light.dimmer_hall
+              - light.hjrnelampe
+ 
           - type: horizontal-stack
             cards:
               - type: light
@@ -133,10 +151,12 @@ views:
     path: phones
     icon: mdi:cellphone-iphone
     cards: 
-      - type: entities
+      - type: glance
         entities: 
           - sensor.kristoffer_sin_iphone_battery_level
           - sensor.kristoffer_sin_iphone_battery_state
+          - sensor.linus_sin_iphone_battery_level
+          - sensor.linus_sin_iphone_battery_state
     
   - title: Info
     path: info
@@ -187,6 +207,11 @@ views:
           - zwave.fibaro_system_fgd212_dimmer_2
           - zwave.fibaro_system_fgd212_dimmer_2_2
           - zwave.fibaro_system_fgms001zw5_motion_sensor
+          - switch.aeotec_wallmote_quad_1
+          - switch.aeotec_zw130_wallmote_quad_switch_2
+          - switch.aeotec_zw130_wallmote_quad_switch_3
+          - switch.aeotec_zw130_wallmote_quad_switch_4
+          - switch.aeotec_zw130_wallmote_quad_switch_5
 
 
 

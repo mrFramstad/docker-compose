@@ -1,86 +1,49 @@
-- id: Lights_on_in_the_morning_on_motion_weekdays
-  alias: Lys på om morgenen ved bevegelse i ukedager
+- id: Lights_on_in_the_morning_on_motion
+  alias: Lys på om morgenen ved bevegelse
   trigger:
-  - entity_id: binary_sensor.motion_hall
+  - entity_id: binary_sensor.fibaro_system_fgms001zw5_motion_sensor_sensor
     from: 'off'
     platform: state
     to: 'on'
   condition:
   - condition: state
-    entity_id: light.dimmer_hall
+    entity_id: light.fibaro_system_fgd212_dimmer_2_level_2
     state: 'off'
-  - after: 08:30:00
-    before: '09:00:00'
+  - after: 06:40:00
+    before: '22:00:00'
     condition: time
-  - condition: time
-    weekday:
-      - mon
-      - tue
-      - wed
-      - thu
-      - fri
   action:
   - data:
       brightness: 150
       entity_id:
-      - light.dimmer_hall
-      - light.dimmer_diningtable
+      - light.fibaro_system_fgd212_dimmer_2_level_2
+      - light.fibaro_system_fgd212_dimmer_2_level_4
       - light.hjrnelampe
-      transition: 10
+      transition: 5
     service: light.turn_on
-
-- id: Lights_on_in_the_morning_on_motion_weekends
-  alias: Lys på om morgenen ved bevegelse i helg
-  trigger:
-  - entity_id: binary_sensor.motion_hall
-    from: 'off'
-    platform: state
-    to: 'on'
-  condition:
-  - condition: state
-    entity_id: light.dimmer_hall
-    state: 'off'
-  - after: 08:30:00
-    before: '09:00:00'
-    condition: time
-  - condition: time
-    weekday:
-      - sat
-      - sun
-  action:
-  - data:
-      brightness: 150
-      entity_id:
-      - light.dimmer_hall
-      - light.dimmer_diningtable
-      - light.hjrnelampe
-      transition: 10
-    service: light.turn_on
-    
 - id: Lights_on_in_the_night_on_motion
   alias: Lys av i gang etter 30 sekunder uten bevelgese
   trigger:
-  - entity_id: binary_sensor.motion_hall
+  - entity_id: binary_sensor.fibaro_system_fgms001zw5_motion_sensor_sensor
     platform: state
     to: 'on'
   condition:
   - condition: state
-    entity_id: light.dimmer_hall
+    entity_id: light.fibaro_system_fgd212_dimmer_2_level_4
     state: 'off'
   - after: '22:00:00'
-    before: 09:00:00
+    before: 06:30:00
     condition: time
   action:
   - data:
       brightness: 28
-      entity_id: light.dimmer_hall
+      entity_id: light.fibaro_system_fgd212_dimmer_2_level_4
       transition: 2
     service: light.turn_on
   - delay: 00:00:30
   - data:
-      entity_id: light.dimmer_hall
+      entity_id: light.fibaro_system_fgd212_dimmer_2_level_4
     service: light.turn_off
-
 - id: Close_garage_door_on_sundown
   alias: Lukk garasje ved solnedgang
   trigger:
@@ -92,19 +55,59 @@
     state: Open
   action:
   - service: garage_door.trigger_door
-
-- id: ifttt_webhook_received
-  alias: IFTT Webhook Received
+- id: wallmote_activate_day_scene
+  alias: Wallmote activate day scene
   trigger:
+  - event_data:
+      entity_id: switch.aeotec_wallmote_quad_1
+      scene_data: 0
+      scene_id: 1
+    event_type: zwave.scene_activated
     platform: event
-    event_type: ifttt_webhook_received
-    event_data:
-      action: call_service
+  condition: []
   action:
-    service_template: '{{ trigger.event.data.service }}'
-    data_template:
-      mac: '{{ trigger.event.data.mac }}'
-      dev_id: '{{ trigger.event.data.dev_id }}'
-      host_name: '{{ trigger.event.data.host_name }}'
-      location_name: '{{ trigger.event.data.location_name }}'
-
+  - data:
+      entity_id: scene.day
+    service: scene.turn_on
+- id: wallmote_activate_evening_scene
+  alias: Wallmote activate evening scene
+  trigger:
+  - event_data:
+      entity_id: switch.aeotec_wallmote_quad_1
+      scene_data: 0
+      scene_id: 2
+    event_type: zwave.scene_activated
+    platform: event
+  condition: []
+  action:
+  - data:
+      entity_id: scene.evening
+    service: scene.turn_on
+- id: wallmote_activate_night_scene
+  alias: Wallmote activate night scene
+  trigger:
+  - event_data:
+      entity_id: switch.aeotec_wallmote_quad_1
+      scene_data: 0
+      scene_id: 3
+    event_type: zwave.scene_activated
+    platform: event
+  condition: []
+  action:
+  - data:
+      entity_id: scene.night
+    service: scene.turn_on
+- id: wallmote_activate_test_scene
+  alias: Wallmote activate test scene
+  trigger:
+  - event_data:
+      entity_id: switch.aeotec_wallmote_quad_1
+      scene_data: 0
+      scene_id: 4
+    event_type: zwave.scene_activated
+    platform: event
+  condition: []
+  action:
+  - data:
+      entity_id: scene.test
+    service: scene.turn_on  

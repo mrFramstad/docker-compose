@@ -43,6 +43,9 @@ sensor.google_wifi_uptime:
 garage_door.last_message:
   friendly_name: Garasjeportstatus
 
+sensor.trikk_fra_ster_ster_platform_12349:
+  friendly_name: Trikk mot sentrum
+
 light.dimmer_diningtable:
   friendly_name: Dining table lamp
 

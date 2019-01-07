@@ -13,6 +13,10 @@ homeassistant:
   # Customization file
   customize: !include customize.yaml
 
+group: !include groups.yaml
+automation: !include automations.yaml
+script: !include scripts.yaml
+
 # Enables the frontend
 frontend:
   themes: !include themes.yaml
@@ -20,34 +24,12 @@ frontend:
 lovelace:
   mode: yaml
 
-# Enables configuration UI
-config:
-
-#device_tracker:
-#  - platform: googlehome
-#    host: 192.168.86.219
-#    interval_seconds: 10
-#    consider_home: 180
-#    new_device_defaults:
-#      track_new_devices: true
-
-zone:
-  - name: Home
-    latitude: !secret myLatitude
-    longitude: !secret myLongitude
-    radius: 100
-    icon: mdi:account-multiple
+panel_iframe:
+  configurator:
+    title: Configurator
+    icon: mdi:wrench
+    url: http://hassio.local:3218
     
-http:
-  api_password: !secret apiPassword
-  #base_url: http://ha.framstad.com
-  base_url: https://ha.framstad.com
-  ssl_certificate: /etc/letsencrypt/live/framstad.com/fullchain.pem
-  ssl_key: /etc/letsencrypt/live/framstad.com/privkey.pem
-  #ssl_certificate: /etc/letsencrypt/live/framstad.com-0002/fullchain.pem
-  #ssl_key: /etc/letsencrypt/live/framstad.com-0002/privkey.pem
-  
-
 updater:
   include_used_components: true
 
@@ -70,6 +52,41 @@ logger:
   logs:
     homeassistant.components.mqtt: debug
 
+# Enables configuration UI
+config:
+
+http:
+  api_password: !secret apiPassword
+  base_url: https://ha.framstad.com
+  ssl_certificate: /etc/letsencrypt/live/framstad.com/fullchain.pem
+  ssl_key: /etc/letsencrypt/live/framstad.com/privkey.pem
+  
+zwave:
+  usb_path: /dev/ttyACM0
+  
+recorder:
+  purge_keep_days: 14
+  db_url: !secret mariadb_connection_url
+
+#device_tracker:
+#  - platform: googlehome
+#    host: 192.168.86.219
+#    interval_seconds: 10
+#    consider_home: 180
+#    new_device_defaults:
+#      track_new_devices: true
+
+# Text to speach
+tts:
+  - platform: google
+
+zone:
+  - name: Home
+    latitude: !secret myLatitude
+    longitude: !secret myLongitude
+    radius: 100
+    icon: mdi:account-multiple
+    
 # Enables a map showing the location of tracked devices
 map:
 
@@ -90,7 +107,7 @@ ifttt:
   key: !secret iftttApiKey
   
 # My personal device tracker
-wifi_device_tracker:
+#wifi_device_tracker:
   
 # Weather prediction
 sensor:
@@ -105,7 +122,6 @@ sensor:
       - pressure
       - windDirection
       - humidity
-  
   - platform: google_wifi
   - platform: speedtest
     monitored_conditions:
@@ -113,16 +129,13 @@ sensor:
       - download
       - upload
 
-# Text to speech
-tts:
-  - platform: google
-
-zwave:
-  usb_path: /dev/ttyACM0
-  
-recorder:
-  purge_keep_days: 14
-  db_url: !secret mariadb_connection_url
+# Entur public transportation
+  - platform: entur_public_transport
+    name: Trikk fra Sæter
+    expand_platforms: true
+    show_on_map: true
+    stop_ids:
+      - 'NSR:StopPlace:58303'
 
 # Cloud
 cloud:
@@ -155,7 +168,8 @@ sonos:
       - 192.168.86.42
 
 ios:
-apple_tv:
+
+#apple_tv:
 #  - host: 192.168.86.62
 #    name: stua
 
@@ -166,17 +180,6 @@ wunderlist:
   client_id: !secret wunderListClientId
   access_token: !secret wunderListToken
       
-panel_iframe:
-  configurator:
-    title: Configurator
-    icon: mdi:wrench
-    url: http://hassio.local:3218
-    
-group: !include groups.yaml
-automation: !include automations.yaml
-script: !include scripts.yaml
-
-
 light:
   - platform: group
     name: Hall Lights
@@ -248,11 +251,5 @@ scene:
     entities:
       light.kitchen_bench:  
         state: true
-        color_temp: 380
-        brightness: 80
-
-          
-
-
-
-      
+        color_temp: 100
+        brightness: 40
