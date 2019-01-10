@@ -51,16 +51,19 @@ logger:
   default: warning
   logs:
     homeassistant.components.mqtt: debug
+    homeassistant.config.automation: debug
+#    homeassistant.components.zwave: debug
 
 # Enables configuration UI
 config:
 
 http:
   api_password: !secret apiPassword
-  base_url: https://ha.framstad.com
+  base_url: !secret baseUrl
   ssl_certificate: /etc/letsencrypt/live/framstad.com/fullchain.pem
   ssl_key: /etc/letsencrypt/live/framstad.com/privkey.pem
-  
+  ssl_profile: intermediate
+
 zwave:
   usb_path: /dev/ttyACM0
   
@@ -85,7 +88,7 @@ zone:
     latitude: !secret myLatitude
     longitude: !secret myLongitude
     radius: 100
-    icon: mdi:account-multiple
+    #icon: mdi:account-multiple
     
 # Enables a map showing the location of tracked devices
 map:
@@ -128,7 +131,7 @@ sensor:
       - ping
       - download
       - upload
-
+  - platform: moon
 # Entur public transportation
   - platform: entur_public_transport
     name: Trikk fra Sæter

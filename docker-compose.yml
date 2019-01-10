@@ -40,7 +40,7 @@ services:
       - ./Home-AssistantConfig:/config
       - /etc/letsencrypt:/etc/letsencrypt
     ports:
-      #- 80:8123
+      - 80:8123
       - 443:8123
     devices:
       - /dev/ttyACM0:/dev/ttyACM0

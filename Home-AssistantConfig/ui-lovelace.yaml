@@ -45,6 +45,13 @@ views:
         name: Trikk fra Sæter
         entities:
           - sensor.trikk_fra_ster_ster_platform_12349
+          - sensor.moon
+# - type: picture-entity
+     #   entity: device_tracker.kristoffer
+     #   image: /local/stoffer.png
+     #   state_filter:
+     #     "not_home": brightness(20%) saturate(1)
+     #     "home": brightness(100%) saturate(1) 
 
       - type: vertical-stack
         cards:
@@ -104,18 +111,6 @@ views:
               - light.dimmer_hall
               - light.hjrnelampe
  
-          - type: horizontal-stack
-            cards:
-              - type: light
-                entity: light.dimmer_diningtable
-              - type: light
-                entity: light.dimmer_hall
-          - type: horizontal-stack
-            cards:
-              - type: light
-                entity: light.hjrnelampe
-              - type: light
-                entity: light.kitchen_bench
           - type: history-graph
             title: Bevegelse i gangen
             entities:
