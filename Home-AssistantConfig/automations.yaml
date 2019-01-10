@@ -12,6 +12,13 @@
   - after: 06:40:00
     before: 07:10:00
     condition: time
+  - condition: time
+    weekday:
+      - mon
+      - tue
+      - wed
+      - thu
+      - fri
   action:
   - data:
       entity_id: scene.day
