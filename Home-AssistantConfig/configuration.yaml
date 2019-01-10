@@ -112,6 +112,9 @@ ifttt:
 # My personal device tracker
 #wifi_device_tracker:
   
+weather:
+  - platform: met
+  
 # Weather prediction
 sensor:
   - platform: yr
@@ -249,7 +252,13 @@ scene:
       light.dimmer_diningtable: false
       light.hjrnelampe: false
       light.kitchen_bench: false
-
+ 
+  - name: Nightlight
+    entities:
+      light.dimmer_hall: 
+        state: true
+        brightness: 28
+      
   - name: Test
     entities:
       light.kitchen_bench:  

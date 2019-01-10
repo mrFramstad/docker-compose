@@ -32,10 +32,8 @@
     condition: time
   action:
   - data:
-      brightness: 28
-      entity_id: binary_sensor.motion_hall
-      transition: 2
-    service: light.turn_on
+      entity_id: scene.nightlight
+    service: scene.turn_on
   - delay: 00:00:30
   - data:
       entity_id: binary_sensor.motion_hall
