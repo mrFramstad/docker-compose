@@ -59,13 +59,55 @@
       dev_id: '{{ trigger.event.data.dev_id }}'
       host_name: '{{ trigger.event.data.host_name }}'
       location_name: '{{ trigger.event.data.location_name }}'
+- id: wallmote_activate_day_scene
+  alias: Wallmote activate day
+  trigger:
+  - event_data:
+      entity_id:  zwave.aeotec_zw130_wallmote_quad
+      scene_data: 0
+      scene_id: 1
+    event_type: zwave.scene_activated
+    platform: event
+  condition: []
+  action:
+  - data:
+      entity_id: scene.day
+    service: scene.turn_on
+- id: wallmote_activate_evening_scene
+  alias: Wallmote activate evening
+  trigger:
+  - event_data:
+      entity_id:  zwave.aeotec_zw130_wallmote_quad
+      scene_data: 0
+      scene_id: 2
+    event_type: zwave.scene_activated
+    platform: event
+  condition: []
+  action:
+  - data:
+      entity_id: scene.evening
+    service: scene.turn_on
+- id: wallmote_activate_night_scene
+  alias: Wallmote activate night
+  trigger:
+  - event_data:
+      entity_id:  zwave.aeotec_zw130_wallmote_quad
+      scene_data: 0
+      scene_id: 3
+    event_type: zwave.scene_activated
+    platform: event
+  condition: []
+  action:
+  - data:
+      entity_id: scene.night
+    service: scene.turn_on
 - id: wallmote_activate_test_scene
   alias: Wallmote activate test scene
   trigger:
   - event_data:
-      entity_id: switch.aeotec_wallmote_quad_1
-      scene_data: '0'
-      scene_id: '4'
+      entity_id:  zwave.aeotec_zw130_wallmote_quad
+      scene_data: 0
+      scene_id: 4
     event_type: zwave.scene_activated
     platform: event
   condition: []

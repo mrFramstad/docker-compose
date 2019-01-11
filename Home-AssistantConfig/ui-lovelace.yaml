@@ -133,7 +133,12 @@ views:
                   action: call-service
                   service: scene.turn_on
                   service_data: {"entity_id": "scene.night"}
-           
+              - entity: scene.test
+                tap_action:
+                  action: call-service
+                  service: scene.turn_on
+                  service_data: {"entity_id": "scene.test"}
+          
           - type: entities
             entities:
               - light.dimmer_diningtable
