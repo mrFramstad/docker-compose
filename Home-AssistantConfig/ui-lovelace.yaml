@@ -35,6 +35,8 @@ views:
                 state_image:
                   "home": /local/people/knut.png
                   "not_home": /local/people/knut_away.png
+          #- type: horizontal-stack
+          #  cards:
               - type: picture-entity
                 entity: device_tracker.linus
                 show_name: false
@@ -49,6 +51,13 @@ views:
                 state_image:
                   "home": /local/people/sigurd.png
                   "not_home": /local/people/sigurd_away.png
+              #- type: picture-entity
+              #  entity: device_tracker.wvwzzzauzgw912198
+              #  show_name: false
+              #  show_state: false
+              #  state_image:
+              #    "home": /local/people/egolf.png
+              #    "not_home": /local/people/egolf_away.png
       
           - type: glance
             name: Scene
@@ -94,6 +103,7 @@ views:
             entities:
               - device_tracker.kristoffer_sin_iphone
               - device_tracker.linus_sin_iphone  
+              - device_tracker.wvwzzzauzgw912198
  
   - title: Lys
     path: lys
@@ -130,21 +140,34 @@ views:
               - light.kitchen_bench
               - light.dimmer_hall
               - light.hjrnelampe
- 
+          
+          - type: horizontal-stack
+            cards:
+              - type: light
+                entity: light.dimmer_diningtable
+              - type: light
+                entity: light.kitchen_bench
+          - type: horizontal-stack
+            cards:
+              - type: light
+                entity: light.dimmer_hall
+              - type: light
+                entity: light.hjrnelampe
+          
           - type: history-graph
-            title: Bevegelse i gangen
+            title: Motion in hall
             entities:
               - binary_sensor.motion_hall
           - type: horizontal-stack
             cards:
               - type: sensor
                 entity: sensor.temprature_hall
-                name: Temperatur      
+                name: Hall temprature      
                 accuracy: 500
                 detail: 2
                 graph: line
               - type: sensor
-                name: Utetempratur
+                name: Outside temprature
                 entity: sensor.vret_temperature
                 accuracy: 500
                 detail: 2
@@ -220,6 +243,19 @@ views:
               - sensor.google_wifi_new_version
               - sensor.google_wifi_status
               - sensor.google_wifi_uptime
+          - type: entities
+            title: VW E-Golf
+            entities:
+              - sensor.wvwzzzauzgw912198_battery_level
+              - sensor.wvwzzzauzgw912198_charging_time_left
+              - sensor.wvwzzzauzgw912198_odometer
+              - sensor.wvwzzzauzgw912198_electric_range
+              - sensor.wvwzzzauzgw912198_last_connected
+              - sensor.wvwzzzauzgw912198_service_inspection
+              - sensor.wvwzzzauzgw912198_climatisation_target_temperature
+              - binary_sensor.wvwzzzauzgw912198_parking_light
+              - binary_sensor.wvwzzzauzgw912198_external_power
+              - binary_sensor.wvwzzzauzgw912198_climatisation_without_external_power
 
 
 

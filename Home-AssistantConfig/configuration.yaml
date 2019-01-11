@@ -114,7 +114,7 @@ ifttt:
   
 weather:
   - platform: met
-  
+
 # Weather prediction
 sensor:
   - platform: yr
@@ -142,6 +142,12 @@ sensor:
     show_on_map: true
     stop_ids:
       - 'NSR:StopPlace:58303'
+
+volkswagen_carnet:
+  username: !secret vwUserName
+  password: !secret vwPassword
+  update_interval: 
+    minutes: 5
 
 # Cloud
 cloud:
@@ -226,8 +232,10 @@ scene:
         color_temp: 320
       light.kitchen_bench:
         state: true
-        color_temp: 320
-        brightness: 180
+        color_temp: 367
+        brightness: 168
+        #min_mireds: 153
+        #max_mireds: 500
 
   - name: Evening
     entities:
