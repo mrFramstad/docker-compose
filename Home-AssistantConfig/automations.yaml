@@ -73,3 +73,18 @@
   - data:
       entity_id: scene.test
     service: scene.turn_on
+- id: '1547216902160'
+  alias: Maybe charge car
+  trigger:
+  - entity_id: sensor.wvwzzzauzgw912198_last_connected
+    platform: state
+  condition:
+  - condition: numeric_state
+    entity_id: sensor.wvwzzzauzgw912198_battery_level
+    below: 60
+  action:
+  - data:
+      title: "Lade bilen?"
+      message: "Batteri på bilen er under 60%"
+    service: notify.ios_kristoffer_sin_iphone
+

@@ -182,21 +182,38 @@ views:
       - type: media-control
         entity: media_player.kjkken
  
-  - title: Telefoner
-    path: phones
-    icon: mdi:cellphone-iphone
+  - title: E-Golf
+    path: car
+    icon: mdi:car-connected
     cards: 
+      - type: entities
+        title: VW E-Golf
+        entities:
+          - sensor.wvwzzzauzgw912198_battery_level
+          - switch.wvwzzzauzgw912198_charging
+          - switch.wvwzzzauzgw912198_window_heater
+          - switch.wvwzzzauzgw912198_climatisation
+          - sensor.wvwzzzauzgw912198_charging_time_left
+          - sensor.wvwzzzauzgw912198_odometer
+          - sensor.wvwzzzauzgw912198_electric_range
+          - sensor.wvwzzzauzgw912198_last_connected
+          - sensor.wvwzzzauzgw912198_service_inspection
+          - sensor.wvwzzzauzgw912198_climatisation_target_temperature
+          - binary_sensor.wvwzzzauzgw912198_parking_light
+          - binary_sensor.wvwzzzauzgw912198_external_power
+          - binary_sensor.wvwzzzauzgw912198_climatisation_without_external_power
+          - lock.wvwzzzauzgw912198_doors_locked
+    
+  - title: Info
+    path: info
+    icon: mdi:information-outline
+    cards:
       - type: glance
         entities: 
           - sensor.kristoffer_sin_iphone_battery_level
           - sensor.kristoffer_sin_iphone_battery_state
           - sensor.linus_sin_iphone_battery_level
           - sensor.linus_sin_iphone_battery_state
-    
-  - title: Info
-    path: info
-    icon: mdi:information-outline
-    cards:
       - type: glance
         title: Garasjen min
         entities:
@@ -243,20 +260,6 @@ views:
               - sensor.google_wifi_new_version
               - sensor.google_wifi_status
               - sensor.google_wifi_uptime
-          - type: entities
-            title: VW E-Golf
-            entities:
-              - sensor.wvwzzzauzgw912198_battery_level
-              - sensor.wvwzzzauzgw912198_charging_time_left
-              - sensor.wvwzzzauzgw912198_odometer
-              - sensor.wvwzzzauzgw912198_electric_range
-              - sensor.wvwzzzauzgw912198_last_connected
-              - sensor.wvwzzzauzgw912198_service_inspection
-              - sensor.wvwzzzauzgw912198_climatisation_target_temperature
-              - binary_sensor.wvwzzzauzgw912198_parking_light
-              - binary_sensor.wvwzzzauzgw912198_external_power
-              - binary_sensor.wvwzzzauzgw912198_climatisation_without_external_power
-
 
 
       
