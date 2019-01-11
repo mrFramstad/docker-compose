@@ -14,11 +14,11 @@
     condition: time
   - condition: time
     weekday:
-      - mon
-      - tue
-      - wed
-      - thu
-      - fri
+    - mon
+    - tue
+    - wed
+    - thu
+    - fri
   action:
   - data:
       entity_id: scene.day
@@ -43,7 +43,7 @@
     service: scene.turn_on
   - delay: 00:00:30
   - data:
-      entity_id: binary_sensor.motion_hall
+      entity_id: light.dimmer_hall
     service: light.turn_off
 - id: ifttt_webhook_received
   alias: IFTT Webhook Received

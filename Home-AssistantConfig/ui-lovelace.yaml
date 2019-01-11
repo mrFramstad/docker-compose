@@ -10,52 +10,73 @@ views:
     name: Hjem
     icon: mdi:home-circle
     cards: 
-      - type: horizontal-stack
-        cards:
-          - type: entity-filter
-            card: glance
-            title: Hvem er hjemme?
-            entities:
-              - device_tracker.kristoffer
-              - device_tracker.liv
-              - device_tracker.knut
-              - device_tracker.linus
-              - device_tracker.sigurd
-            state_filter:
-              - home   
-      - type: glance
-        name: Scene
-        entities:   
-          - entity: scene.day
-            tap_action:
-              action: call-service
-              service: scene.turn_on
-              service_data: {"entity_id": "scene.day"}
-          - entity: scene.evening
-            tap_action:
-              action: call-service
-              service: scene.turn_on
-              service_data: {"entity_id": "scene.evening"}
-          - entity: scene.night
-            tap_action:
-              action: call-service
-              service: scene.turn_on
-              service_data: {"entity_id": "scene.night"}
-          - entity: scene.test
-            tap_action:
-              action: call-service
-              service: scene.turn_on
-              service_data: {"entity_id": "scene.test"}
-
-# - type: picture-entity
-     #   entity: device_tracker.kristoffer
-     #   image: /local/stoffer.png
-     #   state_filter:
-     #     "not_home": brightness(20%) saturate(1)
-     #     "home": brightness(100%) saturate(1) 
-
       - type: vertical-stack
         cards:
+          - type: horizontal-stack
+            cards:
+              - type: picture-entity
+                entity: device_tracker.liv
+                show_name: false
+                show_state: false
+                state_image:
+                  "home": /local/people/liv.png
+                  "not_home": /local/people/liv_away.png
+              - type: picture-entity
+                entity: device_tracker.kristoffer
+                show_name: false
+                show_state: false
+                state_image:
+                  "home": /local/people/stoffer.png
+                  "not_home": /local/people/stoffer_away.png
+              - type: picture-entity
+                entity: device_tracker.knut
+                show_name: false
+                show_state: false
+                state_image:
+                  "home": /local/people/knut.png
+                  "not_home": /local/people/knut_away.png
+              - type: picture-entity
+                entity: device_tracker.linus
+                show_name: false
+                show_state: false
+                state_image:
+                  "home": /local/people/linus.png
+                  "not_home": /local/people/linus_away.png
+              - type: picture-entity
+                entity: device_tracker.sigurd
+                show_name: false
+                show_state: false
+                state_image:
+                  "home": /local/people/sigurd.png
+                  "not_home": /local/people/sigurd_away.png
+      
+          - type: glance
+            name: Scene
+            show_name: true
+            show_state: false
+            entities:   
+              - entity: scene.day
+                show_name: false
+                show_state: false
+                tap_action:
+                  action: call-service
+                  service: scene.turn_on
+                  service_data: {"entity_id": "scene.day"}
+              - entity: scene.evening
+                tap_action:
+                  action: call-service
+                  service: scene.turn_on
+                  service_data: {"entity_id": "scene.evening"}
+              - entity: scene.night
+                tap_action:
+                  action: call-service
+                  service: scene.turn_on
+                  service_data: {"entity_id": "scene.night"}
+              - entity: scene.test
+                tap_action:
+                  action: call-service
+                  service: scene.turn_on
+                  service_data: {"entity_id": "scene.test"}
           - type: horizontal-stack
             cards:
               - type: glance
@@ -64,16 +85,16 @@ views:
                   - sensor.trikk_fra_ster_ster_platform_12349
                   - sensor.moon
                   - sensor.temprature_hall
-      - type: custom:weather-card
-        entity: weather.metno
-      - type: map
-        aspect_ratio: 16:9
-        default_zoom: 15
-        entities:
-          - device_tracker.kristoffer_sin_iphone
-          - device_tracker.linus_sin_iphone  
-          #- zone.home     
-  
+
+          - type: custom:weather-card
+            entity: weather.metno
+          - type: map
+            aspect_ratio: 16:9
+            default_zoom: 15
+            entities:
+              - device_tracker.kristoffer_sin_iphone
+              - device_tracker.linus_sin_iphone  
+ 
   - title: Lys
     path: lys
     name: Lys
@@ -84,6 +105,8 @@ views:
         cards:
           - type: glance
             name: Scene
+            show_name: true
+            show_state: false
             entities:   
               - entity: scene.day
                 tap_action:
@@ -151,56 +174,52 @@ views:
     path: info
     icon: mdi:information-outline
     cards:
-      - type: entities
-        title: Vær fra YR.no
-        entities:
-          - sensor.vret_humidity
-          - sensor.vret_precipitation
-          - sensor.vret_pressure
-          - sensor.vret_symbol
-          - sensor.vret_temperature
-          - sensor.vret_wind_direction
-          - sensor.vret_wind_speed
-          - sun.sun
-      - type: entities
-        title: Google WiFi
-        entities: 
-          - sensor.speedtest_download
-          - sensor.speedtest_ping
-          - sensor.speedtest_upload
-          - sensor.google_wifi_current_version
-          - sensor.google_wifi_last_restart
-          - sensor.google_wifi_local_ip
-          - sensor.google_wifi_new_version
-          - sensor.google_wifi_status
-          - sensor.google_wifi_uptime
-      - type: entities
+      - type: glance
         title: Garasjen min
         entities:
           - garage_door.last_message
-          - script.garage_door_trigger
+          - entity: script.garage_door_trigger
+            tap_action:
+              action: call-service
+              service: script.turn_on
+              service_data: {"entity_id": "script.garage_door_trigger"}
       - type: sensor
         entity: sensor.electricity_price_tyslevveien_59_f
         name: Strømpris
         accuracy: 500
         detail: 2
         graph: line
+  
   - title: Settings
     path: Settings
     icon: mdi:settings
     cards:
-      - type: entities
-        title: Z-wave
-        entities: 
-          - zwave.aeotec_zw090_zstick_gen5_eu
-          - zwave.fibaro_system_fgd212_dimmer_2
-          - zwave.fibaro_system_fgd212_dimmer_2_2
-          - zwave.fibaro_system_fgms001zw5_motion_sensor
-          - switch.aeotec_wallmote_quad_1
-          - switch.aeotec_zw130_wallmote_quad_switch_2
-          - switch.aeotec_zw130_wallmote_quad_switch_3
-          - switch.aeotec_zw130_wallmote_quad_switch_4
-          - switch.aeotec_zw130_wallmote_quad_switch_5
+      - type: vertical-stack
+        cards: 
+          - type: entities
+            title: Z-wave
+            entities: 
+              - zwave.aeotec_zw090_zstick_gen5_eu
+              - zwave.fibaro_system_fgd212_dimmer_2
+              - zwave.fibaro_system_fgd212_dimmer_2_2
+              - zwave.fibaro_system_fgms001zw5_motion_sensor
+              - switch.aeotec_wallmote_quad_1
+              - switch.aeotec_zw130_wallmote_quad_switch_2
+              - switch.aeotec_zw130_wallmote_quad_switch_3
+              - switch.aeotec_zw130_wallmote_quad_switch_4
+              - switch.aeotec_zw130_wallmote_quad_switch_5
+          - type: entities
+            title: Google WiFi
+            entities: 
+              - sensor.speedtest_download
+              - sensor.speedtest_ping
+              - sensor.speedtest_upload
+              - sensor.google_wifi_current_version
+              - sensor.google_wifi_last_restart
+              - sensor.google_wifi_local_ip
+              - sensor.google_wifi_new_version
+              - sensor.google_wifi_status
+              - sensor.google_wifi_uptime
 
 
 
