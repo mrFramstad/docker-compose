@@ -1,6 +1,11 @@
-
 resources:
   - url: /local/custom-lovelace/weather-card/weather-card.js
+    type: module
+
+  - url: /local/custom-lovelace/compact-custom-header/compact-custom-header.js?v=0.0.1
+    type: js
+    
+  - url: /local/button-card.js
     type: module
 
 title: Casa Framstad
@@ -10,6 +15,7 @@ views:
     name: Hjem
     icon: mdi:home-circle
     cards: 
+      #- type: custom:compact-custom-header
       - type: vertical-stack
         cards:
           - type: horizontal-stack
@@ -51,14 +57,7 @@ views:
                 state_image:
                   "home": /local/people/sigurd.png
                   "not_home": /local/people/sigurd_away.png
-              #- type: picture-entity
-              #  entity: device_tracker.wvwzzzauzgw912198
-              #  show_name: false
-              #  show_state: false
-              #  state_image:
-              #    "home": /local/people/egolf.png
-              #    "not_home": /local/people/egolf_away.png
-      
+
           - type: glance
             name: Scene
             show_name: true
@@ -86,6 +85,7 @@ views:
                   action: call-service
                   service: scene.turn_on
                   service_data: {"entity_id": "scene.test"}
+
           - type: horizontal-stack
             cards:
               - type: glance
@@ -103,6 +103,8 @@ views:
             entities:
               - device_tracker.kristoffer_sin_iphone
               - device_tracker.linus_sin_iphone  
+              - device_tracker.knut_sin_iphone  
+              - device_tracker.liv_christine_natvig_framstads_iphone
               - device_tracker.wvwzzzauzgw912198
  
   - title: Lys
@@ -196,18 +198,22 @@ views:
         entities:
           - sensor.wvwzzzauzgw912198_battery_level
           - switch.wvwzzzauzgw912198_charging
+          - sensor.wvwzzzauzgw912198_charging_time_left
+          - binary_sensor.wvwzzzauzgw912198_external_power  
+          - sensor.wvwzzzauzgw912198_electric_range 
+          - type: divider
+            style: !secret divider         
           - switch.wvwzzzauzgw912198_window_heater
           - switch.wvwzzzauzgw912198_climatisation
-          - sensor.wvwzzzauzgw912198_charging_time_left
-          - sensor.wvwzzzauzgw912198_odometer
-          - sensor.wvwzzzauzgw912198_electric_range
-          - sensor.wvwzzzauzgw912198_last_connected
-          - sensor.wvwzzzauzgw912198_service_inspection
           - sensor.wvwzzzauzgw912198_climatisation_target_temperature
-          - binary_sensor.wvwzzzauzgw912198_parking_light
-          - binary_sensor.wvwzzzauzgw912198_external_power
           - binary_sensor.wvwzzzauzgw912198_climatisation_without_external_power
           - lock.wvwzzzauzgw912198_doors_locked
+          - type: divider
+            style: !secret divider          
+          - sensor.wvwzzzauzgw912198_last_connected
+          - binary_sensor.wvwzzzauzgw912198_parking_light
+          - sensor.wvwzzzauzgw912198_odometer
+          - sensor.wvwzzzauzgw912198_service_inspection
     
   - title: Info
     path: info
@@ -219,8 +225,13 @@ views:
           - sensor.kristoffer_sin_iphone_battery_state
           - sensor.linus_sin_iphone_battery_level
           - sensor.linus_sin_iphone_battery_state
+          - sensor.knut_sin_iphone_battery_level
+          - sensor.knut_sin_iphone_battery_state
+          - sensor.liv_christine_natvig_framstads_iphone_battery_level
+          - sensor.liv_christine_natvig_framstads_iphone_battery_state
+
       - type: glance
-        title: Garasjen min
+        title: My garge
         entities:
           - garage_door.last_message
           - entity: script.garage_door_trigger

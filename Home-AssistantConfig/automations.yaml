@@ -63,7 +63,7 @@
   alias: Wallmote activate day
   trigger:
   - event_data:
-      entity_id:  zwave.aeotec_zw130_wallmote_quad
+      entity_id: zwave.aeotec_zw130_wallmote_quad
       scene_data: 0
       scene_id: 1
     event_type: zwave.scene_activated
@@ -77,7 +77,7 @@
   alias: Wallmote activate evening
   trigger:
   - event_data:
-      entity_id:  zwave.aeotec_zw130_wallmote_quad
+      entity_id: zwave.aeotec_zw130_wallmote_quad
       scene_data: 0
       scene_id: 2
     event_type: zwave.scene_activated
@@ -91,7 +91,7 @@
   alias: Wallmote activate night
   trigger:
   - event_data:
-      entity_id:  zwave.aeotec_zw130_wallmote_quad
+      entity_id: zwave.aeotec_zw130_wallmote_quad
       scene_data: 0
       scene_id: 3
     event_type: zwave.scene_activated
@@ -105,7 +105,7 @@
   alias: Wallmote activate test scene
   trigger:
   - event_data:
-      entity_id:  zwave.aeotec_zw130_wallmote_quad
+      entity_id: zwave.aeotec_zw130_wallmote_quad
       scene_data: 0
       scene_id: 4
     event_type: zwave.scene_activated
@@ -118,15 +118,15 @@
 - id: '1547216902160'
   alias: Maybe charge car
   trigger:
-  - entity_id: sensor.wvwzzzauzgw912198_last_connected
-    platform: state
-  condition:
-  - condition: numeric_state
+  - below: '60'
     entity_id: sensor.wvwzzzauzgw912198_battery_level
-    below: 60
+    platform: numeric_state
+  condition:
+  - condition: state
+    entity_id: binary_sensor.wvwzzzauzgw912198_external_power
+    state: 'off'
   action:
   - data:
-      title: "Lade bilen?"
-      message: "Batteri på bilen er under 60%"
+      message: Batteri på bilen er under 60%
+      title: Lade bilen?
     service: notify.ios_kristoffer_sin_iphone
-

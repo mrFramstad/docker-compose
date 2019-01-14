@@ -1,50 +1,24 @@
-sensor.vret_pressure:
-  friendly_name: Lufttrykk
-#sensor.vret_cloudiness:
-#  friendly_name: Sikt
-#sensor.vret_dewpoint_temperature:
-#  friendly_name: Duggpunkt
-#sensor.vret_fog:
-#  hidden: true
-#sensor.vret_high_clouds:
-#  hidden: true
-sensor.vret_humidity:
-  friendly_name: Luftfuktighet
-#sensor.vret_low_clouds:
-#  hidden: true
-#sensor.vret_medium_clouds:
-#  hidden: true
-sensor.vret_precipitation:
-  friendly_name: Oppfattet tempratur
-sensor.vret_symbol:
-  friendly_name: Vær
-sensor.vret_temperature:
-  friendly_name: Tempratur
-sensor.vret_wind_direction:
-  friendly_name: Vindretning
-sensor.vret_wind_speed:
-  friendly_name: Vindhastighet
 sun.sun:
-  friendly_name: Sol opp/ned
+  friendly_name: Sun up/down
 
 sensor.google_wifi_current_version:
-  friendly_name: Versjonsnummer
+  friendly_name: Versionnumber
 sensor.google_wifi_last_restart:
-  friendly_name: Siste omstart
+  friendly_name: Last reboot
 sensor.google_wifi_local_ip:
   friendly_name: IP adresse
 sensor.google_wifi_new_version:
-  friendly_name: Siste versjon
+  friendly_name: Version
 sensor.google_wifi_status:
   friendly_name: Status
 sensor.google_wifi_uptime:
-  friendly_name: Oppetid
+  friendly_name: Uptime
 
 garage_door.last_message:
-  friendly_name: Garasjeportstatus
+  friendly_name: Status
 
 sensor.trikk_fra_ster_ster_platform_12349:
-  friendly_name: Trikk mot sentrum
+  friendly_name: Tram towards work
 
 light.dimmer_diningtable:
   friendly_name: Dining table lamp
@@ -56,24 +30,24 @@ light.hjrnelampe:
   friendly_name: Corner lamp
  
 scene.day:
-  friendly_name: Dag  
+  friendly_name: Day  
   icon: mdi:weather-sunny
 scene.evening:
-  friendly_name: Kveld  
+  friendly_name: Evening  
   icon: mdi:weather-night
 scene.night:
-  friendly_name: Natt  
+  friendly_name: Night  
   icon: mdi:hotel   
 
 
 sensor.wvwzzzauzgw912198_battery_level:
   friendly_name: Battery level
 switch.wvwzzzauzgw912198_charging:
-  friendly_name: Charging?
+  friendly_name: Charging
 switch.wvwzzzauzgw912198_window_heater:
-  friendly_name: Window heaters on?
+  friendly_name: Window heaters on
 switch.wvwzzzauzgw912198_climatisation:
-  friendly_name: Climatisation on?
+  friendly_name: Climatisation on
 sensor.wvwzzzauzgw912198_charging_time_left:
   friendly_name: Charging time left
 sensor.wvwzzzauzgw912198_odometer:
@@ -87,10 +61,28 @@ sensor.wvwzzzauzgw912198_service_inspection:
 sensor.wvwzzzauzgw912198_climatisation_target_temperature:
   friendly_name: Target temprature
 binary_sensor.wvwzzzauzgw912198_parking_light:
-  friendly_name: Parking lights on?
+  friendly_name: Parking lights on
 binary_sensor.wvwzzzauzgw912198_external_power:
-  friendly_name: External power?
+  friendly_name: External power
 binary_sensor.wvwzzzauzgw912198_climatisation_without_external_power:  
-  friendly_name: Climatisation without external power on?
+  friendly_name: Climatisation without external power on
 lock.wvwzzzauzgw912198_doors_locked:
-  friendly_name: Doors locked?
+  friendly_name: Doors locked
+
+sensor.kristoffer_sin_iphone_battery_level:
+  friendly_name: Kristoffer
+sensor.kristoffer_sin_iphone_battery_state:
+  friendly_name: Kristoffer
+sensor.linus_sin_iphone_battery_level:
+  friendly_name: Linus
+sensor.linus_sin_iphone_battery_state:
+  friendly_name: Linus
+sensor.knut_sin_iphone_battery_level:
+  friendly_name: Knut
+sensor.knut_sin_iphone_battery_state:
+  friendly_name: Knut
+
+garage_door.last_message:
+  friendly_name: Last message
+script.garage_door_trigger:
+  friendly_name: Trigger
