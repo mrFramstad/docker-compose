@@ -98,6 +98,7 @@ mqtt:
   port: !secret mqttPort
   username: !secret mqttUser
   password: !secret mqttPassword
+  discovery: true
 
 # Track the sun
 sun:

@@ -1,12 +1,10 @@
 resources:
-  - url: /local/custom-lovelace/weather-card/weather-card.js
+  - url: https://cdn.jsdelivr.net/gh/bramkragten/custom-ui@master/weather-card/weather-card.min.js
     type: module
-
-  - url: /local/custom-lovelace/compact-custom-header/compact-custom-header.js?v=0.0.1
-    type: js
-    
-  - url: /local/button-card.js
-    type: module
+  #- url: /local/custom-lovelace/compact-custom-header/compact-custom-header.js?v=0.0.1
+  #  type: js  
+  #- url: /local/button-card.js
+  #  type: module
 
 title: Casa Framstad
 views:
@@ -243,6 +241,18 @@ views:
         entity: sensor.electricity_price_tyslevveien_59_f
         name: Strømpris
         accuracy: 500
+        detail: 2
+        graph: line
+      - type: sensor
+        name: Temprature
+        entity: sensor.garage_temperature
+        accuracy: 10
+        detail: 2
+        graph: line
+      - type: sensor
+        name: Humidity
+        entity: sensor.garage_humidity
+        accuracy: 10
         detail: 2
         graph: line
   

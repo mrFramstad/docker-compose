@@ -73,6 +73,10 @@ sensor.kristoffer_sin_iphone_battery_level:
   friendly_name: Kristoffer
 sensor.kristoffer_sin_iphone_battery_state:
   friendly_name: Kristoffer
+sensor.liv_christine_natvig_framstads_iphone_battery_level:
+  friendly_name: Liv
+sensor.liv_christine_natvig_framstads_iphone_battery_state:
+  friendly_name: Liv
 sensor.linus_sin_iphone_battery_level:
   friendly_name: Linus
 sensor.linus_sin_iphone_battery_state:
