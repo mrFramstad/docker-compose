@@ -55,7 +55,7 @@ Lys_stue:
   icon: mdi:readability
   name: Stue
   entities: 
-    - light.hjrnelampe
+    - light.hjornelampe
 
 Lys_spisestue:
   icon: mdi:readability

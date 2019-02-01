@@ -89,12 +89,12 @@ views:
               - type: glance
                 name: Trikk fra Sæter
                 entities:
-                  - sensor.trikk_fra_ster_ster_platform_12349
+                  - sensor.trikk_fra_saeter_saeter_platform_12349
                   - sensor.moon
                   - sensor.temprature_hall
 
           - type: custom:weather-card
-            entity: weather.metno
+            entity: weather.met_no
           - type: map
             aspect_ratio: 16:9
             default_zoom: 15
@@ -144,7 +144,7 @@ views:
               - light.dimmer_diningtable
               - light.kitchen_bench
               - light.dimmer_hall
-              - light.hjrnelampe
+              - light.hjornelampe
           
           - type: horizontal-stack
             cards:
@@ -157,7 +157,7 @@ views:
               - type: light
                 entity: light.dimmer_hall
               - type: light
-                entity: light.hjrnelampe
+                entity: light.hjornelampe
           
           - type: history-graph
             title: Motion in hall
@@ -173,7 +173,7 @@ views:
                 graph: line
               - type: sensor
                 name: Outside temprature
-                entity: sensor.vret_temperature
+                entity: sensor.vaeret_temperature
                 accuracy: 500
                 detail: 2
                 graph: line  
@@ -216,45 +216,49 @@ views:
   - title: Info
     path: info
     icon: mdi:information-outline
-    cards:
-      - type: glance
-        entities: 
-          - sensor.kristoffer_sin_iphone_battery_level
-          - sensor.kristoffer_sin_iphone_battery_state
-          - sensor.linus_sin_iphone_battery_level
-          - sensor.linus_sin_iphone_battery_state
-          - sensor.knut_sin_iphone_battery_level
-          - sensor.knut_sin_iphone_battery_state
-          - sensor.liv_christine_natvig_framstads_iphone_battery_level
-          - sensor.liv_christine_natvig_framstads_iphone_battery_state
+    cards: 
+      #- type: custom:compact-custom-header
+      - type: vertical-stack    
+        cards:
+          - type: glance
+            entities: 
+              - sensor.kristoffer_sin_iphone_battery_level
+              - sensor.kristoffer_sin_iphone_battery_state
+              - sensor.linus_sin_iphone_battery_level
+              - sensor.linus_sin_iphone_battery_state
+              - sensor.knut_sin_iphone_battery_level
+              - sensor.knut_sin_iphone_battery_state
+              - sensor.liv_christine_natvig_framstads_iphone_battery_level
+              - sensor.liv_christine_natvig_framstads_iphone_battery_state
 
-      - type: glance
-        title: My garge
-        entities:
-          - garage_door.last_message
-          - entity: script.garage_door_trigger
-            tap_action:
-              action: call-service
-              service: script.turn_on
-              service_data: {"entity_id": "script.garage_door_trigger"}
-      - type: sensor
-        entity: sensor.electricity_price_tyslevveien_59_f
-        name: Strømpris
-        accuracy: 500
-        detail: 2
-        graph: line
-      - type: sensor
-        name: Temprature
-        entity: sensor.garage_temperature
-        accuracy: 10
-        detail: 2
-        graph: line
-      - type: sensor
-        name: Humidity
-        entity: sensor.garage_humidity
-        accuracy: 10
-        detail: 2
-        graph: line
+          - type: glance
+            title: My garge
+            entities:
+              - garage_door.last_message
+              - entity: script.garage_door_trigger
+                tap_action:
+                  action: call-service
+                  service: script.turn_on
+                  service_data: {"entity_id": "script.garage_door_trigger"}
+          - type: sensor
+            entity: sensor.electricity_price_tyslevveien_59_f
+            entity: sensor.electricity_price_tyslevveien_59_f
+            name: Electricity price
+            accuracy: 500
+            detail: 2
+            graph: line
+          - type: horizontal-stack
+            cards:   
+              - type: sensor
+                name: Temprature work
+                entity: sensor.garage_temperature
+                detail: 2
+                graph: line
+              - type: sensor
+                name: Humidity work
+                entity: sensor.garage_humidity
+                detail: 2
+                graph: line
   
   - title: Settings
     path: Settings

@@ -14,10 +14,8 @@ sensor.google_wifi_status:
 sensor.google_wifi_uptime:
   friendly_name: Uptime
 
-garage_door.last_message:
-  friendly_name: Status
 
-sensor.trikk_fra_ster_ster_platform_12349:
+sensor.trikk_fra_saeter_saeter_platform_12349:
   friendly_name: Tram towards work
 
 light.dimmer_diningtable:
@@ -26,7 +24,7 @@ light.dimmer_diningtable:
 light.dimmer_hall:
   friendly_name: Hall lamp
 
-light.hjrnelampe:
+light.hjornelampe:
   friendly_name: Corner lamp
  
 scene.day:

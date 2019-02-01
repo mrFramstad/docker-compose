@@ -157,7 +157,7 @@ cloud:
       include_entities:
         - light.dimmer_diningtable
         - light.dimmer_hall
-        - light.hjrnelampe
+        - light.hjornelampe
         - scene.day
         - scene.evening
         - scene.light
@@ -205,7 +205,7 @@ light:
   - platform: group
     name: Living Room Lights
     entities:
-      - light.hjrnelampe
+      - light.hjornelampe
   - platform: group
     name: Living Room Lights
     entities:
@@ -215,7 +215,7 @@ light:
     entities:
       - light.dimmer_hall
       - light.dimmer_diningtable
-      - light.hjrnelampe 
+      - light.hjornelampe 
       - light.kitchen_bench    
       
 scene:
@@ -227,7 +227,7 @@ scene:
       light.dimmer_diningtable:
         state: true
         brightness: 180
-      light.hjrnelampe:
+      light.hjornelampe:
         state: true
         brightness: 180
         color_temp: 320
@@ -246,7 +246,7 @@ scene:
       light.dimmer_diningtable:
         state: true
         brightness: 100
-      light.hjrnelampe:
+      light.hjornelampe:
         state: true
         brightness: 100
         color_temp: 380
@@ -259,7 +259,7 @@ scene:
     entities:
       light.dimmer_hall: false
       light.dimmer_diningtable: false
-      light.hjrnelampe: false
+      light.hjornelampe: false
       light.kitchen_bench: false
  
   - name: Nightlight
