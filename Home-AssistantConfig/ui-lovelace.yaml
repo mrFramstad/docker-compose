@@ -251,12 +251,12 @@ views:
             cards:   
               - type: sensor
                 name: Temprature work
-                entity: sensor.garage_temperature
+                entity: sensor.work_temperature
                 detail: 2
                 graph: line
               - type: sensor
                 name: Humidity work
-                entity: sensor.garage_humidity
+                entity: sensor.work_humidity
                 detail: 2
                 graph: line
   

@@ -57,14 +57,11 @@ logger:
 # Enables configuration UI
 config:
 
-http:
-  api_password: !secret apiPassword
-  base_url: !secret baseUrl
-  #ssl_certificate: /etc/letsencrypt/live/framstad.com/fullchain.pem
-  #ssl_key: /etc/letsencrypt/live/framstad.com/privkey.pem
-  ssl_certificate: /etc/letsencrypt/live/framstad.com-0003/fullchain.pem
-  ssl_key: /etc/letsencrypt/live/framstad.com-0003/privkey.pem
-  ssl_profile: intermediate
+http: api_password: !secret apiPassword base_url: !secret baseUrl
+  ssl_certificate: /etc/letsencrypt/live/framstad.com/fullchain.pem
+  framstad.com-0003/fullchain.pem ssl_key:
+  /etc/letsencrypt/live/framstad.com/privkey.pem ssl_profile:
+  intermediate
 
 zwave:
   usb_path: /dev/ttyACM0

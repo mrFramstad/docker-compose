@@ -1,8 +1,0 @@
-#!/bin/bash
-
-echo "renewing ssl certs"
-cd /opt/certbot
-./certbot-auto --server https://acme-v02.api.letsencrypt.org/directory -d *.framstad.com --manual --preferred-challenges dns-01 certonly
-
-
-echo "ssl certs updated"
