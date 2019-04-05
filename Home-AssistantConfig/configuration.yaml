@@ -21,14 +21,8 @@ script: !include scripts.yaml
 frontend:
   themes: !include themes.yaml
   
-lovelace:
+#lovelace:
   #mode: yaml
-
-panel_iframe:
-  configurator:
-    title: Configurator
-    icon: mdi:wrench
-    url: http://hassio.local:3218
     
 updater:
   include_used_components: true
@@ -58,10 +52,8 @@ logger:
 config:
 
 http:
-  api_password: !secret apiPassword
+  #api_password: !secret apiPassword
   base_url: !secret baseUrl
-  #ssl_certificate: /etc/letsencrypt/live/framstad.com/fullchain.pem
-  #ssl_key: /etc/letsencrypt/live/framstad.com/privkey.pem
   ssl_certificate: /etc/letsencrypt/live/framstad.com-0003/fullchain.pem
   ssl_key: /etc/letsencrypt/live/framstad.com-0003/privkey.pem
   ssl_profile: intermediate
@@ -72,14 +64,6 @@ zwave:
 recorder:
   purge_keep_days: 14
   db_url: !secret mariadb_connection_url
-
-#device_tracker:
-#  - platform: googlehome
-#    host: 192.168.86.219
-#    interval_seconds: 10
-#    consider_home: 180
-#    new_device_defaults:
-#      track_new_devices: true
 
 # Text to speach
 tts:
@@ -132,11 +116,6 @@ sensor:
       - windDirection
       - humidity
   - platform: google_wifi
-  - platform: speedtest
-    monitored_conditions:
-      - ping
-      - download
-      - upload
   - platform: moon
 # Entur public transportation
   - platform: entur_public_transport
@@ -146,11 +125,19 @@ sensor:
     stop_ids:
       - 'NSR:StopPlace:58303'
 
-volkswagen_carnet:
+speedtestdotnet:
+  scan_interval:
+    minutes: 30
+  monitored_conditions:
+    - ping
+    - download
+    - upload
+
+volkswagencarnet:
   username: !secret vwUserName
   password: !secret vwPassword
   update_interval: 
-    minutes: 5
+    minutes: 5 
 
 # Cloud
 cloud:
