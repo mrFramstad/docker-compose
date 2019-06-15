@@ -67,7 +67,8 @@ recorder:
 
 # Text to speach
 tts:
-  - platform: google
+  - platform: google_translate
+    service_name: google_say
 
 zone:
   - name: Home
