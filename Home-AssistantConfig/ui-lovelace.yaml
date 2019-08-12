@@ -194,24 +194,24 @@ views:
       - type: entities
         title: VW E-Golf
         entities:
-          - sensor.wvwzzzauzgw912198_battery_level
-          - switch.wvwzzzauzgw912198_charging
-          - sensor.wvwzzzauzgw912198_charging_time_left
-          - binary_sensor.wvwzzzauzgw912198_external_power  
-          - sensor.wvwzzzauzgw912198_electric_range 
+          - sensor.livs_golf_battery_level
+          - switch.livs_golf_charging
+          - sensor.livs_golf_charging_time_left
+          - binary_sensor.livs_golf_external_power  
+          - sensor.livs_golf_electric_range 
           - type: divider
             style: !secret divider         
-          - switch.wvwzzzauzgw912198_window_heater
-          - switch.wvwzzzauzgw912198_climatisation
-          - sensor.wvwzzzauzgw912198_climatisation_target_temperature
-          - binary_sensor.wvwzzzauzgw912198_climatisation_without_external_power
-          - lock.wvwzzzauzgw912198_doors_locked
+          - switch.livs_golf_window_heater
+          - switch.livs_golf_climatisation
+          - sensor.livs_golf_climatisation_target_temperature
+          - binary_sensor.livs_golf_climatisation_without_external_power
+          - lock.livs_golf_doors_locked
           - type: divider
             style: !secret divider          
-          - sensor.wvwzzzauzgw912198_last_connected
-          - binary_sensor.wvwzzzauzgw912198_parking_light
-          - sensor.wvwzzzauzgw912198_odometer
-          - sensor.wvwzzzauzgw912198_service_inspection
+          - sensor.livs_golf_last_connected
+          - binary_sensor.livs_golf_parking_light
+          - sensor.livs_golf_odometer
+          - sensor.livs_golf_service_inspection
     
   - title: Info
     path: info
