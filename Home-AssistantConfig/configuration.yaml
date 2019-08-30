@@ -20,17 +20,20 @@ script: !include scripts.yaml
 # Enables the frontend
 frontend:
   themes: !include themes.yaml
-  
+
 #lovelace:
-  #mode: yaml
-    
+#mode: yaml
+
+#Enable System Health component
+system_health:
+
 updater:
   include_used_components: true
 
 # Discover some devices automatically
-discovery: 
-   #enable:
-   # - homekit
+discovery:
+  #enable:
+  # - homekit
 
 # Allows you to issue voice commands from the frontend in enabled browsers
 conversation:
@@ -60,7 +63,7 @@ http:
 
 zwave:
   usb_path: /dev/ttyACM0
-  
+
 recorder:
   purge_keep_days: 14
   db_url: !secret mariadb_connection_url
@@ -76,7 +79,7 @@ zone:
     longitude: !secret myLongitude
     radius: 100
     #icon: mdi:account-multiple
-    
+
 # Enables a map showing the location of tracked devices
 map:
 
@@ -96,10 +99,10 @@ garage_door:
 
 ifttt:
   key: !secret iftttApiKey
-  
+
 # My personal device tracker
 #wifi_device_tracker:
-  
+
 weather:
   - platform: met
 
@@ -118,13 +121,13 @@ sensor:
       - humidity
   - platform: google_wifi
   - platform: moon
-# Entur public transportation
+  # Entur public transportation
   - platform: entur_public_transport
     name: Trikk fra Sæter
     expand_platforms: true
     show_on_map: true
     stop_ids:
-      - 'NSR:StopPlace:58303'
+      - "NSR:StopPlace:58303"
 
 speedtestdotnet:
   scan_interval:
@@ -140,7 +143,7 @@ volkswagencarnet:
   scan_interval:
     minutes: 2
   name:
-    wvwzzzauzgw912198: 'Livs Golf'
+    wvwzzzauzgw912198: "Livs Golf"
 
 # Cloud
 cloud:
@@ -157,15 +160,15 @@ cloud:
         - switch
         - scene
       #exclude_entities:
-        #- switch.outside
+      #- switch.outside
     #entity_config:
-      #switch.kitchen:
-      #  name: Custom Name for Google Assistant
-      #  aliases:
-      #   - bright lights
-      #   - entry lights
-      #  room: living room
-  
+    #switch.kitchen:
+    #  name: Custom Name for Google Assistant
+    #  aliases:
+    #   - bright lights
+    #   - entry lights
+    #  room: living room
+
 sonos:
   media_player:
     hosts:
@@ -184,7 +187,7 @@ tibber:
 wunderlist:
   client_id: !secret wunderListClientId
   access_token: !secret wunderListToken
-      
+
 light:
   - platform: group
     name: Hall Lights
@@ -207,13 +210,13 @@ light:
     entities:
       - light.dimmer_hall
       - light.dimmer_diningtable
-      - light.hjornelampe 
-      - light.kitchen_bench    
-      
+      - light.hjornelampe
+      - light.kitchen_bench
+
 scene:
   - name: Day
     entities:
-      light.dimmer_hall: 
+      light.dimmer_hall:
         state: true
         brightness: 180
       light.dimmer_diningtable:
@@ -232,7 +235,7 @@ scene:
 
   - name: Evening
     entities:
-      light.dimmer_hall: 
+      light.dimmer_hall:
         state: true
         brightness: 100
       light.dimmer_diningtable:
@@ -253,16 +256,16 @@ scene:
       light.dimmer_diningtable: false
       light.hjornelampe: false
       light.kitchen_bench: false
- 
+
   - name: Nightlight
     entities:
-      light.dimmer_hall: 
+      light.dimmer_hall:
         state: true
         brightness: 28
-      
+
   - name: Test
     entities:
-      light.kitchen_bench:  
+      light.kitchen_bench:
         state: true
         color_temp: 100
         brightness: 40
