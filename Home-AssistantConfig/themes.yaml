@@ -686,3 +686,8 @@ Light - Navy Blue:
   ### Table row ###
   table-row-background-color: var(--primary-background-color)
   table-row-alternative-background-color: var(--secondary-background-color)
+th_gauge_3:
+  label-badge-blue: "#55acee"
+  label-badge-green: "#9bc53d"
+  label-badge-yellow: "#fde74c"
+  label-badge-red: "#c3423f"

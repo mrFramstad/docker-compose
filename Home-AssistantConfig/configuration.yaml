@@ -54,6 +54,13 @@ logger:
 # Enables configuration UI
 config:
 
+camera:
+  - platform: mjpeg
+    name: Livingroom Camera
+    still_image_url: http://192.168.86.44/_gCVimage.jpg
+    mjpeg_url: http://192.168.86.44/video/mjpg.cgi
+    password: !secret myCamera
+
 http:
   #api_password: !secret apiPassword
   base_url: !secret baseUrl
