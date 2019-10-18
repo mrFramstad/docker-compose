@@ -231,15 +231,6 @@ views:
               - sensor.liv_christine_natvig_framstads_iphone_battery_level
               - sensor.liv_christine_natvig_framstads_iphone_battery_state
 
-          - type: glance
-            title: My garge
-            entities:
-              - garage_door.last_message
-              - entity: script.garage_door_trigger
-                tap_action:
-                  action: call-service
-                  service: script.turn_on
-                  service_data: {"entity_id": "script.garage_door_trigger"}
           - type: sensor
             entity: sensor.electricity_price_tyslevveien_59_f
             entity: sensor.electricity_price_tyslevveien_59_f

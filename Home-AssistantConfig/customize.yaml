@@ -83,8 +83,4 @@ sensor.knut_sin_iphone_battery_level:
   friendly_name: Knut
 sensor.knut_sin_iphone_battery_state:
   friendly_name: Knut
-
-garage_door.last_message:
-  friendly_name: Last message
-script.garage_door_trigger:
-  friendly_name: Trigger
+  

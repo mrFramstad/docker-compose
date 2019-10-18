@@ -100,10 +100,6 @@ mqtt:
 # Track the sun
 sun:
 
-# Connected garage door
-garage_door:
-  status_topic: /connectedGarageDoor/status
-
 ifttt:
   key: !secret iftttApiKey
 

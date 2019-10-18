@@ -23,7 +23,6 @@ Main_nfo:
   entities:
     - group.Main_google_wifi
     - group.Main_vret_yr
-    - group.Main_garage_door
 
 Main_setings:
   view: true
@@ -91,12 +90,6 @@ Main_google_wifi:
     - sensor.google_wifi_new_version
     - sensor.google_wifi_status
     - sensor.google_wifi_uptime
-
-Main_garage_door:
-  name: Garasjen min
-  entities:
-    - garage_door.last_message
-    - script.garage_door_trigger
 
 Main_z_wave:
   name: Z-wave stick
