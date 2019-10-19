@@ -43,3 +43,4 @@ services:
       - 443:8123
     devices:
       - /dev/ttyACM0:/dev/ttyACM0
+      - /dev/ttyACM1:/dev/ttyACM1

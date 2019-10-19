@@ -71,6 +71,11 @@ http:
 zwave:
   usb_path: /dev/ttyACM0
 
+zha:
+  usb_path: /dev/ttyACM1
+  radio_type: deconz
+  database_path: /config/zigbee.db
+
 recorder:
   purge_keep_days: 14
   db_url: !secret mariadb_connection_url
