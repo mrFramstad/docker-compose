@@ -145,13 +145,13 @@ speedtestdotnet:
     - download
     - upload
 
-volkswagencarnet:
-  username: !secret vwUserName
-  password: !secret vwPassword
-  scan_interval:
-    minutes: 2
-  name:
-    wvwzzzauzgw912198: "Livs Golf"
+#volkswagencarnet:
+#  username: !secret vwUserName
+#  password: !secret vwPassword
+#  scan_interval:
+#    minutes: 2
+#  name:
+#    wvwzzzauzgw912198: "Livs Golf"
 
 # Cloud
 cloud:
@@ -249,14 +249,18 @@ scene:
       light.dimmer_diningtable:
         state: true
         brightness: 100
+      #light.hjornelampe:
+      #  state: true
+      #  brightness: 100
+      #  color_temp: 380
       light.hjornelampe:
         state: true
-        brightness: 100
-        color_temp: 380
+        brightness: 140
+        color_temp: 443
       light.kitchen_bench:
         state: true
-        color_temp: 380
-        brightness: 80
+        color_temp: 443
+        brightness: 70
 
   - name: Night
     entities:
