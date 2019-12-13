@@ -17,6 +17,8 @@ group: !include groups.yaml
 automation: !include automations.yaml
 script: !include scripts.yaml
 
+default_config:
+
 # Enables the frontend
 frontend:
   themes: !include themes.yaml
