@@ -13,7 +13,6 @@ homeassistant:
   # Customization file
   customize: !include customize.yaml
 
-group: !include groups.yaml
 automation: !include automations.yaml
 script: !include scripts.yaml
 
