@@ -42,9 +42,7 @@
       entity_id: scene.nightlight
     service: scene.turn_on
   - delay: 00:00:30
-  - data:
-      entity_id: light.dimmer_hall
-    service: light.turn_off
+  - service: script.1583776814922
 - id: ifttt_webhook_received
   alias: IFTT Webhook Received
   trigger:

@@ -1,3 +1,10 @@
-
-
-
+'1583776814922':
+  alias: hall_lights_of_when_no_brightnesschange
+  sequence:
+  - below: '30'
+    condition: numeric_state
+    entity_id: light.dimmer_hall
+    value_template: '{{states.light.dimmer_hall.attributes.brightness }}'
+  - data: {}
+    entity_id: light.dimmer_hall
+    service: light.turn_off
