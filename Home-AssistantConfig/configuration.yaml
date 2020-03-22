@@ -186,9 +186,12 @@ sonos:
 
 ios:
 
-#apple_tv:
-#  - host: 192.168.86.62
-#    name: stua
+apple_tv:
+#  - host: 192.168.86.228
+#    login_id: LOGIN_ID_1
+#    name: Stua
+#    start_off: false
+#    credentials: CREDENTIALS_1
 
 tibber:
   access_token: !secret tibberToken
@@ -213,14 +216,14 @@ light:
   - platform: group
     name: Living Room Lights
     entities:
-      - light.kitchen_bench
+      - light.elko_elkodimmerzha_bb4eaefe_level_on_off
   - platform: group
     name: All Lights
     entities:
       - light.dimmer_hall
       - light.dimmer_diningtable
       - light.hjornelampe
-      - light.kitchen_bench
+      - light.elko_elkodimmerzha_bb4eaefe_level_on_off
 
 scene:
   - name: Day
@@ -235,13 +238,9 @@ scene:
         state: true
         brightness: 180
         color_temp: 320
-      light.kitchen_bench:
+      light.elko_elkodimmerzha_bb4eaefe_level_on_off:
         state: true
-        color_temp: 367
-        brightness: 168
-        #min_mireds: 153
-        #max_mireds: 500
-
+        brightness: 150
   - name: Evening
     entities:
       light.dimmer_hall:
@@ -250,25 +249,20 @@ scene:
       light.dimmer_diningtable:
         state: true
         brightness: 100
-      #light.hjornelampe:
-      #  state: true
-      #  brightness: 100
-      #  color_temp: 380
       light.hjornelampe:
         state: true
         brightness: 140
         color_temp: 443
-      light.kitchen_bench:
+      light.elko_elkodimmerzha_bb4eaefe_level_on_off:
         state: true
-        color_temp: 443
-        brightness: 70
-
+        brightness: 51
+      
   - name: Night
     entities:
       light.dimmer_hall: false
       light.dimmer_diningtable: false
       light.hjornelampe: false
-      light.kitchen_bench: false
+      light.elko_elkodimmerzha_bb4eaefe_level_on_off: false
 
   - name: Nightlight
     entities:
@@ -278,7 +272,6 @@ scene:
 
   - name: Test
     entities:
-      light.kitchen_bench:
+      light.elko_elkodimmerzha_bb4eaefe_level_on_off:
         state: true
-        color_temp: 100
         brightness: 40
