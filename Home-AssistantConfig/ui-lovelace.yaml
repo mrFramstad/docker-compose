@@ -141,15 +141,12 @@ views:
           
           - type: entities
             entities:
-              - light.dimmer_diningtable
               - light.kitchen_bench
               - light.dimmer_hall
               - light.hjornelampe
           
           - type: horizontal-stack
             cards:
-              - type: light
-                entity: light.dimmer_diningtable
               - type: light
                 entity: light.kitchen_bench
           - type: horizontal-stack

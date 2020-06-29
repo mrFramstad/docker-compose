@@ -18,6 +18,7 @@ christmas:
   paper-toggle-button-checked-bar-color: "#DCD736"
   paper-slider-knob-color: "#DCD736"
   paper-slider-active-color: "#DCD736"
+  card-background-color: var(--paper-card-background-color)  
 dark_cyan:
   primary-color: "#00bcd4"
   disabled-text-color: "#545454"
@@ -46,6 +47,7 @@ dark_cyan:
   paper-toggle-button-checked-button-color: "var(--primary-color)"
   paper-toggle-button-checked-bar-color: "var(--light-primary-color)"
   paper-toggle-button-unchecked-bar-color: "var(--primary-text-color)"
+  card-background-color: var(--paper-card-background-color)  
 dark_orange:
   primary-color: "#ff9800"
   light-primary-color: "#ffc947"
@@ -84,6 +86,7 @@ dark_orange:
   label-badge-grey: "var(--paper-grey-500)"
   table-row-background-color: "var(--paper-card-background-color)"
   table-row-alternative-background-color: "var(--sidebar-text_-_background)"
+  card-background-color: var(--paper-card-background-color)  
 dark_red:
   dark-primary-color: "#c66900"
   disabled-text-color: "#545454"
@@ -115,6 +118,7 @@ dark_red:
   secondary-text-color: "var(--primary-color)"
   table-row-background-color: "var(--paper-card-background-color)"
   table-row-alternative-background-color: "var(--sidebar-text_-_background)"
+  card-background-color: var(--paper-card-background-color)  
 dark:
   primary-color: "#1ABA92"
   primary-background-color: "#303030"
@@ -137,6 +141,7 @@ dark:
   paper-slider-pin-color: "#1ABA92"
   paper-slider-active-color: "#1ABA92"
   paper-slider-secondary-color: "#33F2D8"
+  card-background-color: var(--paper-card-background-color)  
 halloween:
   primary-color: "#dd5800"
   disabled-text-color: "#242424"
@@ -168,6 +173,7 @@ halloween:
   paper-item-icon-active-color: "#ff0000"
   paper-item-icon_-_color: "var(--primary-text-color)"
   paper-toggle-button-unchecked-bar-color: "var(--primary-text-color)"
+  card-background-color: var(--paper-card-background-color)  
 material_dark_green:
   light_green: "#08a8a5"
   dark_green: "#017775"
@@ -214,6 +220,7 @@ material_dark_green:
   label-badge-grey: "var(--pink)"
   table-row-background-color: "var(--light_grey)"
   table-row-alternative-background-color: "var(--dark_grey)"
+  card-background-color: var(--paper-card-background-color)  
 midnight:
   primary-color: "#5294E2"
   accent-color: "#E45E65"
@@ -260,6 +267,7 @@ midnight:
   paper-slider-disabled-secondary-color: "var(--disabled-text-color)"
   google-red-500: "#E45E65"
   google-green-500: "#39E949"
+  card-background-color: var(--paper-card-background-color)  
 night:
   base-hue: "220"
   base-sat: "5%"
@@ -320,6 +328,7 @@ night:
   paper-slider-disabled-active-color: "hsl(var(--base-hue), 80%, 25%)"
   paper-slider-disabled-secondary-color: "hsl(var(--base-hue), 80%, 25%)"
   paper-dialog-color: "hsl(var(--base-hue), 20%, 80%)"
+  card-background-color: var(--paper-card-background-color)  
 solarized_light:
   primary-color: "#586e75"
   accent-color: "#fdf6e3"
@@ -367,6 +376,7 @@ solarized_light:
   paper-slider-disabled-secondary-color: "var(--disabled-text-color)"
   google-red-500: "#dc322f"
   google-green-500: "#859900"
+  card-background-color: var(--paper-card-background-color)  
 sublimination:
   primary-text-color: "#F2F2F3"
   secondary-text-color: "#A6E12D"
@@ -392,6 +402,7 @@ sublimination:
   label-badge-text-color: "rgb(255, 255, 255)"
   label-badge-red: "#A6E12D"
   table-row-alternative-background-color: "#433d43"
+  card-background-color: var(--paper-card-background-color)  
 teal:
   primary-color: "#1DE9B6"
   primary-background-color: "#303030"
@@ -414,6 +425,7 @@ teal:
   paper-slider-pin-color: "#1DE9B6"
   paper-slider-active-color: "#1DE9B6"
   paper-slider-secondary-color: "#33F2D8"
+  card-background-color: var(--paper-card-background-color)  
 vintage:
   turmeric-color: "#DEB853"
   light-turmeric-color: "#E2D9A2"
@@ -459,6 +471,7 @@ vintage:
   paper-font-headline_-_font-family: "var(--primary-font-family)"
   paper-font-caption_-_font-family: "var(--primary-font-family)"
   paper-font-title_-_font-family: "var(--primary-font-family)"
+  card-background-color: var(--paper-card-background-color)  
 green_slate:
   #Color Variables
   green-color: '#00b706'
@@ -555,7 +568,7 @@ green_slate:
   lumo-shade-5pct: 'rgba(41, 41, 41, .05)'
   #Removes Gradient in Calendar/Date-Picker and Drop-down lists
   lumo-tint-5pct: 'var(--darker-grey-color)'
-
+  card-background-color: var(--paper-card-background-color)  
 Dark - Green:
   ### Main Interface Colors ###
   primary-color: "#03B14B"
@@ -599,6 +612,7 @@ Dark - Green:
   ### Table row ###
   table-row-background-color: var(--primary-background-color)
   table-row-alternative-background-color: var(--secondary-background-color)
+  card-background-color: var(--paper-card-background-color)  
 Gray & Green:
   ### Main Interface Colors ###
   primary-color: "#24E081"
@@ -643,6 +657,7 @@ Gray & Green:
   ### Table row ###
   table-row-background-color: var(--primary-background-color)
   table-row-alternative-background-color: var(--secondary-background-color)
+  card-background-color: var(--paper-card-background-color)  
 Light - Navy Blue:
   ### Main Interface Colors ###
   primary-color: "#395274"
@@ -686,8 +701,10 @@ Light - Navy Blue:
   ### Table row ###
   table-row-background-color: var(--primary-background-color)
   table-row-alternative-background-color: var(--secondary-background-color)
+  card-background-color: var(--paper-card-background-color)  
 th_gauge_3:
   label-badge-blue: "#55acee"
   label-badge-green: "#9bc53d"
   label-badge-yellow: "#fde74c"
   label-badge-red: "#c3423f"
+  

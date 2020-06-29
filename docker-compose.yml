@@ -42,5 +42,24 @@ services:
     ports:
       - 443:8123
     devices:
-      - /dev/ttyACM1:/dev/ttyACM0
-      - /dev/ttyACM0:/dev/ttyACM1
+      - /dev/ttyACM0:/dev/ttyACM0
+      #- /dev/ttyACM0:/dev/ttyACM1
+
+  # deconz:
+  #   image: marthoc/deconz
+  #   container_name: deconz
+  #   network_mode: host
+  #   restart: always
+  #   volumes:
+  #     #- /opt/deconz:/opt/deconz
+  #     - /opt/deconz:/root/.local/share/dresden-elektronik/deCONZ
+  #   devices:
+  #     - /dev/ttyACM0
+  #   environment:
+  #     - DECONZ_WEB_PORT=8088
+  #     - DECONZ_WS_PORT=4443
+  #     - DEBUG_INFO=1
+  #     - DEBUG_APS=0
+  #     - DEBUG_ZCL=0
+  #     - DEBUG_ZDP=0
+  #     - DEBUG_OTAU=0

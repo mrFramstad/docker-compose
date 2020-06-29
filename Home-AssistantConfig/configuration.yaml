@@ -15,6 +15,7 @@ homeassistant:
 
 automation: !include automations.yaml
 script: !include scripts.yaml
+scene: !include scenes.yaml
 
 default_config:
 
@@ -55,6 +56,9 @@ logger:
 # Enables configuration UI
 config:
 
+  # Configuration.yaml example
+
+
 camera:
   - platform: mjpeg
     name: Livingroom Camera
@@ -72,10 +76,10 @@ http:
 zwave:
   usb_path: /dev/ttyACM0
 
-zha:
-  usb_path: /dev/ttyACM1
-  radio_type: deconz
-  database_path: /config/zigbee.db
+#zha:
+#  usb_path: /dev/ttyACM1
+#  radio_type: deconz
+#  database_path: /config/zigbee.db
 
 recorder:
   purge_keep_days: 14
@@ -159,8 +163,6 @@ cloud:
   google_actions:
     filter:
       include_entities:
-        - light.dimmer_diningtable
-        - light.dimmer_hall
         - light.hjornelampe
         - scene.day
         - scene.evening
@@ -196,82 +198,10 @@ apple_tv:
 tibber:
   access_token: !secret tibberToken
 
-wunderlist:
-  client_id: !secret wunderListClientId
-  access_token: !secret wunderListToken
-
 light:
   - platform: group
-    name: Hall Lights
+    name: 3 way lamp
     entities:
-      - light.dimmer_hall
-  - platform: group
-    name: Dining Room Lights
-    entities:
-      - light.dimmer_diningtable
-  - platform: group
-    name: Living Room Lights
-    entities:
-      - light.hjornelampe
-  - platform: group
-    name: Living Room Lights
-    entities:
-      - light.elko_elkodimmerzha_bb4eaefe_level_on_off
-  - platform: group
-    name: All Lights
-    entities:
-      - light.dimmer_hall
-      - light.dimmer_diningtable
-      - light.hjornelampe
-      - light.elko_elkodimmerzha_bb4eaefe_level_on_off
-
-scene:
-  - name: Day
-    entities:
-      light.dimmer_hall:
-        state: true
-        brightness: 180
-      light.dimmer_diningtable:
-        state: true
-        brightness: 180
-      light.hjornelampe:
-        state: true
-        brightness: 180
-        color_temp: 320
-      light.elko_elkodimmerzha_bb4eaefe_level_on_off:
-        state: true
-        brightness: 150
-  - name: Evening
-    entities:
-      light.dimmer_hall:
-        state: true
-        brightness: 100
-      light.dimmer_diningtable:
-        state: true
-        brightness: 100
-      light.hjornelampe:
-        state: true
-        brightness: 140
-        color_temp: 443
-      light.elko_elkodimmerzha_bb4eaefe_level_on_off:
-        state: true
-        brightness: 51
-      
-  - name: Night
-    entities:
-      light.dimmer_hall: false
-      light.dimmer_diningtable: false
-      light.hjornelampe: false
-      light.elko_elkodimmerzha_bb4eaefe_level_on_off: false
-
-  - name: Nightlight
-    entities:
-      light.dimmer_hall:
-        state: true
-        brightness: 28
-
-  - name: Test
-    entities:
-      light.elko_elkodimmerzha_bb4eaefe_level_on_off:
-        state: true
-        brightness: 40
+      - light.stue_hvit
+      - light.stue_lilla
+      - light.stue_orange       

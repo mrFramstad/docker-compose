@@ -1,0 +1,84 @@
+- id: day
+  name: Day
+  entities:
+    light.dining_room:
+      brightness: 255
+      state: 'on'
+    light.hall_balloon:
+      brightness: 255
+      state: 'on'
+    light.kitchen_cuppboards:
+      brightness: 255
+      state: 'on'
+    light.kitchen_downlights:
+      brightness: 255
+      state: 'on'
+    light.kitchen_pendulum:
+      brightness: 255
+      state: 'on'
+- id: night
+  name: Night
+  entities:
+    light.dining_room:
+      state: 'off'
+    light.hall_balloon:
+      state: 'off'
+    light.kitchen_cuppboards:
+      state: 'off'
+    light.kitchen_downlights:
+      state: 'off'
+    light.kitchen_pendulum:
+      state: 'off'
+    light.3_way_lamp:
+      state: 'off'
+    light.storm_taklampe:
+      state: 'off'
+    light.knut_taklampe:
+      state: 'off'
+    light.sigurd_taklampe:
+      state: 'off'
+    light.sigurd_hue_lightstrip: 
+      state: 'off'
+
+- id: evening
+  name: Evening
+  entities:
+    light.dining_room:
+      brightness: 70
+      state: 'on'
+    light.hall_balloon:
+      brightness: 70
+      state: 'on'
+    light.kitchen_cuppboards:
+      brightness: 70
+      state: 'on'
+    light.kitchen_downlights:
+      brightness: 70
+      state: 'on'
+    light.kitchen_pendulum:
+      brightness: 70
+      state: 'on'
+- id: away
+  name: Away
+  entities:
+    light.dining_room:
+      state: 'off'
+    light.hall_balloon:
+      state: 'off'
+    light.kitchen_cuppboards:
+      state: 'off'
+    light.kitchen_downlights:
+      state: 'off'
+    light.kitchen_pendulum:
+      state: 'off'
+    light.3_way_lamp:
+      state: 'off'
+    light.storm_taklampe:
+      state: 'off'
+    light.knut_taklampe:
+      state: 'off'
+    light.sigurd_taklampe:
+      state: 'off'
+    light.sigurd_hue_lightstrip: 
+      state: 'off'
+    

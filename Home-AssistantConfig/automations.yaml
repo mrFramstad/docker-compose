@@ -1,48 +1,3 @@
-- id: '1547062417011'
-  alias: Light on in the morning
-  trigger:
-  - entity_id: binary_sensor.motion_hall
-    from: 'off'
-    platform: state
-    to: 'on'
-  condition:
-  - condition: state
-    entity_id: light.dimmer_hall
-    state: 'off'
-  - after: 06:40:00
-    before: 07:10:00
-    condition: time
-  - condition: time
-    weekday:
-    - mon
-    - tue
-    - wed
-    - thu
-    - fri
-  action:
-  - data:
-      entity_id: scene.day
-    service: scene.turn_on
-- id: '1547062685731'
-  alias: Nightlight
-  trigger:
-  - entity_id: binary_sensor.motion_hall
-    from: 'off'
-    platform: state
-    to: 'on'
-  condition:
-  - condition: state
-    entity_id: light.dimmer_hall
-    state: 'off'
-  - after: '22:00:00'
-    before: 06:39:00
-    condition: time
-  action:
-  - data:
-      entity_id: scene.nightlight
-    service: scene.turn_on
-  - delay: 00:00:30
-  - service: script.1583776814922
 - id: ifttt_webhook_received
   alias: IFTT Webhook Received
   trigger:
@@ -61,35 +16,33 @@
   alias: Wallmote activate day
   trigger:
   - event_data:
-      entity_id: zwave.aeotec_zw130_wallmote_quad
+      entity_id: zwave.aotec_multi_remote_quad
       scene_data: 0
       scene_id: 1
     event_type: zwave.scene_activated
     platform: event
   condition: []
   action:
-  - data:
-      entity_id: scene.day
+  - entity_id: scene.day_3
     service: scene.turn_on
 - id: wallmote_activate_evening_scene
   alias: Wallmote activate evening
   trigger:
   - event_data:
-      entity_id: zwave.aeotec_zw130_wallmote_quad
+      entity_id: zwave.aotec_multi_remote_quad
       scene_data: 0
       scene_id: 2
     event_type: zwave.scene_activated
     platform: event
   condition: []
   action:
-  - data:
-      entity_id: scene.evening
+  - entity_id: scene.evening_2
     service: scene.turn_on
 - id: wallmote_activate_night_scene
   alias: Wallmote activate night
   trigger:
   - event_data:
-      entity_id: zwave.aeotec_zw130_wallmote_quad
+      entity_id: zwave.aotec_multi_remote_quad
       scene_data: 0
       scene_id: 3
     event_type: zwave.scene_activated
@@ -100,10 +53,10 @@
       entity_id: scene.night
     service: scene.turn_on
 - id: wallmote_activate_test_scene
-  alias: Wallmote activate test scene
+  alias: Wallmote activate away
   trigger:
   - event_data:
-      entity_id: zwave.aeotec_zw130_wallmote_quad
+      entity_id: zwave.aotec_multi_remote_quad
       scene_data: 0
       scene_id: 4
     event_type: zwave.scene_activated
@@ -111,20 +64,5 @@
   condition: []
   action:
   - data:
-      entity_id: scene.test
+      entity_id: scene.away_2
     service: scene.turn_on
-- id: '1547216902160'
-  alias: Maybe charge car
-  trigger:
-  - below: '60'
-    entity_id: sensor.wvwzzzauzgw912198_battery_level
-    platform: numeric_state
-  condition:
-  - condition: state
-    entity_id: binary_sensor.wvwzzzauzgw912198_external_power
-    state: 'off'
-  action:
-  - data:
-      message: Batteri på bilen er under 60%
-      title: Lade bilen?
-    service: notify.ios_kristoffer_sin_iphone
