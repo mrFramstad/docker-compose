@@ -1,0 +1,207 @@
+homeassistant:
+  # Name of the location where Home Assistant is running
+  name: Home
+  # Location required to calculate the time the sun rises and sets
+  latitude: !secret myLatitude
+  longitude: !secret myLongitude
+  # Impacts weather/sunrise data (altitude above sea level in meters)
+  elevation: 155
+  # metric for Metric, imperial for Imperial
+  unit_system: metric
+  # Pick yours from here: http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+  time_zone: Europe/Oslo
+  # Customization file
+  customize: !include customize.yaml
+
+automation: !include automations.yaml
+script: !include scripts.yaml
+scene: !include scenes.yaml
+
+default_config:
+
+# Enables the frontend
+frontend:
+  themes: !include themes.yaml
+
+#lovelace:
+#mode: yaml
+
+#Enable System Health component
+system_health:
+
+updater:
+  include_used_components: true
+
+# Discover some devices automatically
+discovery:
+  #enable:
+  # - homekit
+
+# Allows you to issue voice commands from the frontend in enabled browsers
+conversation:
+
+# Enables support for tracking state changes over time
+history:
+
+# View all events in a logbook
+logbook:
+
+logger:
+  default: warning
+  logs:
+    homeassistant.components.mqtt: debug
+    homeassistant.config.automation: debug
+#    homeassistant.components.zwave: debug
+
+# Enables configuration UI
+config:
+
+  # Configuration.yaml example
+
+
+camera:
+  - platform: mjpeg
+    name: Livingroom Camera
+    still_image_url: http://192.168.86.44/_gCVimage.jpg
+    mjpeg_url: http://192.168.86.44/video/mjpg.cgi
+    password: !secret myCamera
+
+http:
+  #api_password: !secret apiPassword
+  base_url: !secret baseUrl
+  ssl_certificate: /etc/letsencrypt/live/framstad.com-0003/fullchain.pem
+  ssl_key: /etc/letsencrypt/live/framstad.com-0003/privkey.pem
+  ssl_profile: intermediate
+
+zwave:
+  usb_path: /dev/ttyACM0
+
+#zha:
+#  usb_path: /dev/ttyACM1
+#  radio_type: deconz
+#  database_path: /config/zigbee.db
+
+recorder:
+  purge_keep_days: 14
+  db_url: !secret mariadb_connection_url
+
+# Text to speach
+tts:
+  - platform: google_translate
+    service_name: google_say
+
+zone:
+  - name: Home
+    latitude: !secret myLatitude
+    longitude: !secret myLongitude
+    radius: 100
+    #icon: mdi:account-multiple
+
+# Enables a map showing the location of tracked devices
+map:
+
+mqtt:
+  broker: !secret mqttBroker
+  port: !secret mqttPort
+  username: !secret mqttUser
+  password: !secret mqttPassword
+  discovery: true
+
+# Track the sun
+sun:
+
+ifttt:
+  key: !secret iftttApiKey
+
+# My personal device tracker
+#wifi_device_tracker:
+
+weather:
+  - platform: met
+
+# Weather prediction
+sensor:
+  - platform: yr
+z    name: Været
+    forecast: 24
+    monitored_conditions:
+      - temperature
+      - symbol
+      - precipitation
+      - windSpeed
+      - pressure
+      - windDirection
+      - humidity
+  - platform: google_wifi
+  - platform: moon
+  # Entur public transportation
+  - platform: entur_public_transport
+    name: Trikk fra Sæter
+    expand_platforms: true
+    show_on_map: true
+    stop_ids:
+      - "NSR:StopPlace:58303"
+
+speedtestdotnet:
+  scan_interval:
+    minutes: 30
+  monitored_conditions:
+    - ping
+    - download
+    - upload
+
+#volkswagencarnet:
+#  username: !secret vwUserName
+#  password: !secret vwPassword
+#  scan_interval:
+#    minutes: 2
+#  name:
+#    wvwzzzauzgw912198: "Livs Golf"
+
+# Cloud
+cloud:
+  google_actions:
+    filter:
+      include_entities:
+        - light.hjornelampe
+        - scene.day
+        - scene.evening
+        - scene.light
+      include_domains:
+        - switch
+        - scene
+      #exclude_entities:
+      #- switch.outside
+    #entity_config:
+    #switch.kitchen:
+    #  name: Custom Name for Google Assistant
+    #  aliases:
+    #   - bright lights
+    #   - entry lights
+    #  room: living room
+
+sonos:
+  media_player:
+    hosts:
+      - 192.168.86.233
+      - 192.168.86.42
+
+ios:
+
+apple_tv:
+#  - host: 192.168.86.228
+#    login_id: LOGIN_ID_1
+#    name: Stua
+#    start_off: false
+#    credentials: CREDENTIALS_1
+
+tibber:
+  access_token: !secret tibberToken
+
+light:
+  - platform: group
+    name: 3 way lamp
+    entities:
+      - light.stue_hvit
+      - light.stue_lilla
+      - light.stue_orange       
