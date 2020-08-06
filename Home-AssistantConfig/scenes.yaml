@@ -1,84 +1,156 @@
 - id: day
   name: Day
   entities:
-    light.dining_room:
-      brightness: 255
-      state: 'on'
-    light.hall_balloon:
-      brightness: 255
-      state: 'on'
     light.kitchen_cuppboards:
       brightness: 255
-      state: 'on'
+      state: 'on' 
     light.kitchen_downlights:
       brightness: 255
       state: 'on'
     light.kitchen_pendulum:
       brightness: 255
-      state: 'on'
+      state: 'on' 
+    light.living_room_brass_pendulum:
+      brightness: 255
+      state: 'on' 
+    light.living_room_crystal_pendulum:
+      brightness: 255
+      state: 'on' 
+    light.hall_balloon:
+      brightness: 255
+      state: 'on' 
+    light.dining_room_pendulum:
+      brightness: 255
+      state: 'on' 
+    light.entrance: 
+      brightness: 255
+      state: 'on' 
+    light.hall_downlights:
+      brightness: 255
+      state: 'on' 
+    light.hall_plafond:
+      brightness: 255
+      state: 'on' 
 - id: night
   name: Night
   entities:
-    light.dining_room:
+    light.kitchen_cuppboards: 
       state: 'off'
-    light.hall_balloon:
+    light.kitchen_downlights: 
       state: 'off'
-    light.kitchen_cuppboards:
+    light.kitchen_pendulum: 
       state: 'off'
-    light.kitchen_downlights:
+    light.living_room_brass_pendulum: 
       state: 'off'
-    light.kitchen_pendulum:
+    light.living_room_crystal_pendulum: 
       state: 'off'
-    light.3_way_lamp:
+    light.hall_balloon: 
       state: 'off'
-    light.storm_taklampe:
+    light.dining_room_pendulum: 
       state: 'off'
-    light.knut_taklampe:
+    light.master_bath: 
       state: 'off'
-    light.sigurd_taklampe:
+    light.master_bedroom: 
       state: 'off'
-    light.sigurd_hue_lightstrip: 
+    light.3_way_lamp: 
       state: 'off'
-
+    light.entrance: 
+      state: 'off'
+    light.hall_downlights: 
+      state: 'off'
+    light.hall_plafond: 
+      state: 'off'
+    light.kids_play_room: 
+      state: 'off'
+    light.technical_room: 
+      state: 'off'
+    light.downstairs_bath_downlights: 
+      state: 'off'
+    light.downstairs_bath_pendulum: 
+      state: 'off'
+    light.downstairs_toilet: 
+      state: 'off'
+    light.cleaning_room: 
+      state: 'off'
 - id: evening
   name: Evening
-  entities:
-    light.dining_room:
-      brightness: 70
-      state: 'on'
-    light.hall_balloon:
-      brightness: 70
-      state: 'on'
+  entities:  
     light.kitchen_cuppboards:
       brightness: 70
-      state: 'on'
+      state: 'on' 
     light.kitchen_downlights:
       brightness: 70
       state: 'on'
     light.kitchen_pendulum:
       brightness: 70
-      state: 'on'
+      state: 'on' 
+    light.living_room_brass_pendulum:
+      brightness: 70
+      state: 'on' 
+    light.living_room_crystal_pendulum:
+      brightness: 70
+      state: 'on' 
+    light.hall_balloon:
+      brightness: 70
+      state: 'on' 
+    light.dining_room_pendulum:
+      brightness: 70
+      state: 'on' 
+    light.entrance: 
+      brightness: 70
+      state: 'on' 
+    light.hall_downlights:
+      brightness: 70
+      state: 'on' 
+    light.hall_plafond:
+      brightness: 70
+      state: 'on' 
 - id: away
   name: Away
   entities:
-    light.dining_room:
+    light.kitchen_cuppboards: 
       state: 'off'
-    light.hall_balloon:
+    light.kitchen_downlights: 
       state: 'off'
-    light.kitchen_cuppboards:
+    light.kitchen_pendulum: 
       state: 'off'
-    light.kitchen_downlights:
+    light.living_room_brass_pendulum: 
       state: 'off'
-    light.kitchen_pendulum:
+    light.living_room_crystal_pendulum: 
       state: 'off'
-    light.3_way_lamp:
+    light.hall_balloon: 
       state: 'off'
-    light.storm_taklampe:
+    light.dining_room_pendulum: 
       state: 'off'
-    light.knut_taklampe:
+    light.master_bath: 
       state: 'off'
-    light.sigurd_taklampe:
+    light.master_bedroom: 
+      state: 'off'
+    light.3_way_lamp: 
+      state: 'off'
+    light.knut_taklampe: 
       state: 'off'
     light.sigurd_hue_lightstrip: 
       state: 'off'
-    
+    light.sigurd_taklampe: 
+      state: 'off'
+    light.storm_taklampe: 
+      state: 'off'
+    light.entrance: 
+      state: 'off'
+    light.hall_downlights: 
+      state: 'off'
+    light.hall_plafond: 
+      state: 'off'
+    light.kids_play_room: 
+      state: 'off'
+    light.technical_room: 
+      state: 'off'
+    light.downstairs_bath_downlights: 
+      state: 'off'
+    light.downstairs_bath_pendulum: 
+      state: 'off'
+    light.downstairs_toilet: 
+      state: 'off'
+    light.cleaning_room: 
+      state: 'off'
