@@ -66,3 +66,27 @@
   - data:
       entity_id: scene.away_2
     service: scene.turn_on
+
+- id: 'Nightlight'
+  alias: Nightlight
+  trigger:
+  - entity_id: binary_sensor.fibaro_long_hall_multisensor_motion
+    from: 'off'
+    platform: state
+    to: 'on'
+  condition:
+  - condition: state
+    entity_id: light.long_hall_lights
+    state: 'off'
+  - after: '22:00:00'
+    before: 06:39:00
+    condition: time
+  action:
+  - data:
+      entity_id: scene.nightlight_long_hall
+    service: scene.turn_on
+  - delay: 00:00:30
+  - data:
+      entity_id: light.long_hall_lights
+    service: light.turn_off
+  - service: script.long_hall_lights_of_when_no_brightnesschange

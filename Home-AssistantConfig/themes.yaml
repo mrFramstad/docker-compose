@@ -387,7 +387,7 @@ sublimination:
   light-primary-color: "#60605E"
   state-icon-color: "#5a583f"
   state-icon-active-color: "#ffeb5e"
-  card-background-color: "#272822"
+  #card-background-color: "#272822"
   primary-background-color: "#4f484f"
   secondary-background-color: "#4f484f"
   sidebar-icon-color: "rgba(0, 0, 0, 0.5)"
