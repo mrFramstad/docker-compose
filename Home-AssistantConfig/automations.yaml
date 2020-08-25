@@ -66,8 +66,7 @@
   - data:
       entity_id: scene.away_2
     service: scene.turn_on
-
-- id: 'Nightlight'
+- id: Nightlight
   alias: Nightlight
   trigger:
   - entity_id: binary_sensor.fibaro_long_hall_multisensor_motion
@@ -90,3 +89,57 @@
       entity_id: light.long_hall_lights
     service: light.turn_off
   - service: script.long_hall_lights_of_when_no_brightnesschange
+- id: opple_activate_day scene
+  alias: OPPLE activate day scene
+  trigger:
+  - event_data:
+      id: lumi_remote_b486opcn01_27
+      event: 1002
+    event_type: deconz_event
+    platform: event
+  condition: []
+  action:
+  - entity_id: scene.day_3
+    service: scene.turn_on
+- id: opple_activate_evening_scene
+  alias: OPPLE activate evening scene
+  trigger:
+  - event_data:
+      id: lumi_remote_b486opcn01_27
+      event: 2002
+    event_type: deconz_event
+    platform: event
+  condition: []
+  action:
+  - entity_id: scene.evening_2
+    service: scene.turn_on
+- id: opple_activate_night_scene
+  alias: OPPLE activate night scene
+  trigger:
+  - event_data:
+      id: lumi_remote_b486opcn01_27
+      event: 3002
+    event_type: deconz_event
+    platform: event
+  condition: []
+  action:
+  - entity_id: scene.night
+    service: scene.turn_on
+- id: opple_activate_away_scene
+  alias: OPPLE activate away scene
+  trigger:
+  - event_data:
+      event: 4002
+      id: lumi_remote_b486opcn01_27
+    event_type: deconz_event
+    platform: event
+  #- event_data:
+  #    event: 4002
+  #    id: lumi_remote_2
+  #  event_type: deconz_event
+  #  platform: event
+  condition: []
+  action:
+  - entity_id: scene.away_2
+    service: scene.turn_on
+  mode: single

@@ -191,4 +191,28 @@
     light.long_hall_lights:
       brightness: 25
       state: 'on' 
-    
+      
+- id: test_scene_1
+  name: Test scene 1
+  entities:  
+    light.long_hall_lights:
+      brightness: 25
+      state: 'on' 
+- id: test_scene_2
+  name: Test scene 2
+  entities:  
+    light.long_hall_lights:
+      brightness: 70
+      state: 'on' 
+- id: test_scene_3
+  name: Test scene 3
+  entities:  
+    light.long_hall_lights:
+      brightness: 120
+      state: 'on' 
+- id: test_scene_4
+  name: Test scene 4
+  entities:  
+    light.long_hall_lights:
+      brightness: 170
+      state: 'on' 
