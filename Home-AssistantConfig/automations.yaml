@@ -97,6 +97,11 @@
       event: 1002
     event_type: deconz_event
     platform: event
+  - event_data:
+      event: 1002
+      id: lumi_remote_b486opcn01_31
+    event_type: deconz_event
+    platform: event
   condition: []
   action:
   - entity_id: scene.day_3
@@ -107,6 +112,11 @@
   - event_data:
       id: lumi_remote_b486opcn01_27
       event: 2002
+    event_type: deconz_event
+    platform: event
+  - event_data:
+      event: 2002
+      id: lumi_remote_b486opcn01_31
     event_type: deconz_event
     platform: event
   condition: []
@@ -121,6 +131,11 @@
       event: 3002
     event_type: deconz_event
     platform: event
+  - event_data:
+      event: 3002
+      id: lumi_remote_b486opcn01_31
+    event_type: deconz_event
+    platform: event
   condition: []
   action:
   - entity_id: scene.night
@@ -133,11 +148,11 @@
       id: lumi_remote_b486opcn01_27
     event_type: deconz_event
     platform: event
-  #- event_data:
-  #    event: 4002
-  #    id: lumi_remote_2
-  #  event_type: deconz_event
-  #  platform: event
+  - event_data:
+      event: 4002
+      id: lumi_remote_b486opcn01_31
+    event_type: deconz_event
+    platform: event
   condition: []
   action:
   - entity_id: scene.away_2
