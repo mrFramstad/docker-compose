@@ -93,13 +93,13 @@
   alias: OPPLE activate day scene
   trigger:
   - event_data:
-      id: lumi_remote_b486opcn01_27
+      id: hall_scene_switch
       event: 1002
     event_type: deconz_event
     platform: event
   - event_data:
       event: 1002
-      id: lumi_remote_b486opcn01_31
+      id: entrance_scene_switch
     event_type: deconz_event
     platform: event
   condition: []
@@ -110,13 +110,13 @@
   alias: OPPLE activate evening scene
   trigger:
   - event_data:
-      id: lumi_remote_b486opcn01_27
+      id: hall_scene_switch
       event: 2002
     event_type: deconz_event
     platform: event
   - event_data:
       event: 2002
-      id: lumi_remote_b486opcn01_31
+      id: entrance_scene_switch
     event_type: deconz_event
     platform: event
   condition: []
@@ -127,13 +127,13 @@
   alias: OPPLE activate night scene
   trigger:
   - event_data:
-      id: lumi_remote_b486opcn01_27
+      id: hall_scene_switch
       event: 3002
     event_type: deconz_event
     platform: event
   - event_data:
       event: 3002
-      id: lumi_remote_b486opcn01_31
+      id: entrance_scene_switch
     event_type: deconz_event
     platform: event
   condition: []
@@ -145,12 +145,12 @@
   trigger:
   - event_data:
       event: 4002
-      id: lumi_remote_b486opcn01_27
+      id: hall_scene_switch
     event_type: deconz_event
     platform: event
   - event_data:
       event: 4002
-      id: lumi_remote_b486opcn01_31
+      id: entrance_scene_switch
     event_type: deconz_event
     platform: event
   condition: []
@@ -158,3 +158,18 @@
   - entity_id: scene.away_2
     service: scene.turn_on
   mode: single
+
+- id: cooling_room_door_is_left_open 
+  alias: 'Notify if the cooling room door is left open'
+  trigger:
+    platform: state
+    entity_id:
+      - binary_sensor.cooler_room_door
+    to: 'on'
+    for:
+      minutes: 1
+  action:
+    service: notify.notify
+    data_template:
+      message: >
+          The {{ trigger.to_state.attributes.friendly_name }} was left open

@@ -189,7 +189,7 @@
   name: Nightlight Long Hall
   entities:  
     light.long_hall_lights:
-      brightness: 25
+      brightness: 10
       state: 'on' 
       
 - id: test_scene_1

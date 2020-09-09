@@ -1,7 +1,7 @@
 'long_hall_lights_of_when_no_brightnesschange':
   alias: long_hall_lights_of_when_no_brightnesschange
   sequence:
-  - below: '30'
+  - below: '15'
     condition: numeric_state
     entity_id:  light.long_hall_lights
     value_template: '{{states.light.long_hall_lights.attributes.brightness }}'
