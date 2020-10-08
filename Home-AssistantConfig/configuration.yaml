@@ -121,17 +121,6 @@ weather:
 
 # Weather prediction
 sensor:
-  - platform: yr
-    name: Været
-    forecast: 24
-    monitored_conditions:
-      - temperature
-      - symbol
-      - precipitation
-      - windSpeed
-      - pressure
-      - windDirection
-      - humidity
   - platform: google_wifi
   - platform: moon
   # Entur public transportation
