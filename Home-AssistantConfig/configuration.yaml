@@ -66,6 +66,12 @@ camera:
     mjpeg_url: http://192.168.86.44/video/mjpg.cgi
     password: !secret myCamera
 
+#binary_sensor:
+#  - platform: hikvision
+#    host: 
+#    username: d1eqcd
+#x    password: !secret hikvisionPass
+
 http:
   #api_password: !secret apiPassword
   base_url: !secret baseUrl
