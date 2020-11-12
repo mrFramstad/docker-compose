@@ -22,6 +22,8 @@
     light.bird_lamp:
       brightness: 255
       state: 'on' 
+    switch.beatles_picture:
+      state: 'on'   
     light.long_hall_lights:
       brightness: 255
       state: 'on' 
@@ -57,6 +59,8 @@
       state: 'off' 
     light.bird_lamp:
       state: 'off' 
+    switch.beatles_picture:
+      state: 'off'   
     light.long_hall_lights:
       state: 'off' 
     light.hall_balloon: 

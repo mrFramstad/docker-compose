@@ -74,10 +74,10 @@ camera:
 
 http:
   #api_password: !secret apiPassword
-  base_url: !secret baseUrl
+  #base_url: !secret baseUrl
   ssl_certificate: /etc/letsencrypt/live/framstad.com-0003/fullchain.pem
   ssl_key: /etc/letsencrypt/live/framstad.com-0003/privkey.pem
-  ssl_profile: intermediate
+  #ssl_profile: intermediate
 
 zwave:
   usb_path: /dev/ttyACM0
@@ -88,8 +88,25 @@ zwave:
 #  database_path: /config/zigbee.db
 
 recorder:
-  purge_keep_days: 14
   db_url: !secret mariadb_connection_url
+  purge_keep_days: 14
+                # Everything is included by default.  
+                # Ensure you are keeping only what you need to keep DB small
+  include:    # Include everything you graph and will want to see later
+    domains:
+      - sensor
+      - binary_sensor
+      - switch
+      - light
+                # Everything is included by default.  
+  exclude:    # Eliminate anything that you never graph or refer back to
+    domains:
+      - automation
+      - updater
+    entities:
+      - sun.sun
+      - sensor.time
+      - group.weather # Don't save weather 
 
 # Text to speach
 tts:
@@ -122,8 +139,8 @@ ifttt:
 # My personal device tracker
 #wifi_device_tracker:
 
-weather:
-  - platform: met
+#weather:
+#  - platform: met
 
 # Weather prediction
 sensor:
