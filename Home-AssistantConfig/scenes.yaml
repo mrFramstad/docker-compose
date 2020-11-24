@@ -24,6 +24,8 @@
       state: 'on' 
     switch.beatles_picture:
       state: 'on'   
+    switch.asian_girl_picture:
+      state: 'on'   
     light.long_hall_lights:
       brightness: 255
       state: 'on' 
@@ -42,6 +44,19 @@
     light.hall_plafond:
       brightness: 255
       state: 'on' 
+    light.downstairs_bath_downlights: 
+      brightness: 180
+      state: 'on' 
+    light.downstairs_bath_pendulum: 
+      brightness: 180
+      state: 'on' 
+    light.downstairs_toilet: 
+      brightness: 180
+      state: 'on' 
+    light.cleaning_room: 
+      brightness: 255
+      state: 'on'
+
 - id: night
   name: Night
   entities:
@@ -61,6 +76,8 @@
       state: 'off' 
     switch.beatles_picture:
       state: 'off'   
+    switch.asian_girl_picture:
+      state: 'off'   
     light.long_hall_lights:
       state: 'off' 
     light.hall_balloon: 
@@ -74,21 +91,27 @@
     light.3_way_lamp: 
       state: 'off'
     light.entrance: 
-      state: 'off'
+      brightness: 70
+      state: 'on' 
     light.hall_downlights: 
       state: 'off'
     light.hall_plafond: 
-      state: 'off'
+      brightness: 50
+      state: 'on' 
     light.kids_play_room: 
       state: 'off'
     light.technical_room: 
-      state: 'off'
+      brightness: 50
+      state: 'on' 
     light.downstairs_bath_downlights: 
-      state: 'off'
+      brightness: 50
+      state: 'on' 
     light.downstairs_bath_pendulum: 
-      state: 'off'
+      brightness: 50
+      state: 'on' 
     light.downstairs_toilet: 
-      state: 'off'
+      brightness: 50
+      state: 'on' 
     light.cleaning_room: 
       state: 'off'
 - id: evening
@@ -104,16 +127,16 @@
       brightness: 70
       state: 'on' 
     light.living_room_brass_pendulum:
-      brightness: 25
+      brightness: 50
       state: 'on' 
     light.living_room_crystal_pendulum:
-      brightness: 110
+      brightness: 70
       state: 'on' 
     light.elephant_lamp:
-      brightness: 100
+      brightness: 125
       state: 'on' 
     light.bird_lamp:
-      brightness: 120
+      brightness: 125
       state: 'on' 
     light.long_hall_lights:
       brightness: 70
@@ -122,16 +145,16 @@
       brightness: 90
       state: 'on' 
     light.dining_room_pendulum:
-      brightness: 130
+      brightness: 80
       state: 'on' 
     light.entrance: 
-      brightness: 130
+      brightness: 120
       state: 'on' 
     light.hall_downlights:
-      brightness: 130
+      brightness: 120
       state: 'on' 
     light.hall_plafond:
-      brightness: 130
+      brightness: 120
       state: 'on' 
 - id: away
   name: Away
@@ -171,11 +194,14 @@
     light.storm_taklampe: 
       state: 'off'
     light.entrance: 
-      state: 'off'
-    light.hall_downlights: 
-      state: 'off'
-    light.hall_plafond: 
-      state: 'off'
+      brightness: 90
+      state: 'on' 
+    light.hall_downlights:
+      brightness: 90
+      state: 'on' 
+    light.hall_plafond:
+      brightness: 90
+      state: 'on' 
     light.kids_play_room: 
       state: 'off'
     light.technical_room: 

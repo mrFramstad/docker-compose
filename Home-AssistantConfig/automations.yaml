@@ -23,8 +23,12 @@
     platform: event
   condition: []
   action:
-  - entity_id: scene.day_3
-    service: scene.turn_on
+    - service: scene.turn_on
+      entity_id: scene.day_3
+    - service: media_player.select_source    
+      data: 
+        entity_id: media_player.kjkken
+        source: NRK P13 
 - id: wallmote_activate_evening_scene
   alias: Wallmote activate evening
   trigger:
@@ -174,6 +178,27 @@
       message: >
           The {{ trigger.to_state.attributes.friendly_name }} was left open
 
+- id: test
+  alias: "test"
+  initial_state: 'on'
+  trigger:
+    platform: event
+    event_type: deconz_event
+    event_data:
+      id: switch_33
+      gesture: 7      
+  action:
+#    - service: media_player.select_source    
+#        entity_id: media_player.kjkken
+#        source: NRK P13
+    - service: system_log.write
+      data:
+        message: >
+            dette er før 1
+    - service: system_log.write
+      data:
+        message: >
+            dette er etter 1
 - id: cube_rotatel_left
   alias: "Cube rotate left"
   initial_state: 'on'
