@@ -200,7 +200,7 @@ sonos:
 
 ios:
 
-apple_tv:
+#apple_tv:
 #  - host: 192.168.86.228
 #    login_id: LOGIN_ID_1
 #    name: Stua
