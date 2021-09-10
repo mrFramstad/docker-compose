@@ -207,8 +207,8 @@ ios:
 #    start_off: false
 #    credentials: CREDENTIALS_1
 
-tibber:
-  access_token: !secret tibberToken
+#tibber:
+#  access_token: !secret tibberToken
 
 light:
   - platform: group
