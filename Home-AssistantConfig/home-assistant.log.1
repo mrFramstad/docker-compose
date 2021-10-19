@@ -1,0 +1,200 @@
+2021-10-19 18:26:43 DEBUG (SyncWorker_0) [homeassistant.util.yaml.loader] Secret myLatitude retrieved from secrets.yaml in folder /config
+2021-10-19 18:26:43 DEBUG (SyncWorker_0) [homeassistant.util.yaml.loader] Secret myLongitude retrieved from secrets.yaml in folder /config
+2021-10-19 18:26:43 DEBUG (SyncWorker_0) [homeassistant.util.yaml.loader] Secret myCamera retrieved from secrets.yaml in folder /config
+2021-10-19 18:26:43 DEBUG (SyncWorker_0) [homeassistant.util.yaml.loader] Secret mariadb_connection_url retrieved from secrets.yaml in folder /config
+2021-10-19 18:26:43 DEBUG (SyncWorker_0) [homeassistant.util.yaml.loader] Secret myLatitude retrieved from secrets.yaml in folder /config
+2021-10-19 18:26:43 DEBUG (SyncWorker_0) [homeassistant.util.yaml.loader] Secret myLongitude retrieved from secrets.yaml in folder /config
+2021-10-19 18:26:43 DEBUG (SyncWorker_0) [homeassistant.util.yaml.loader] Secret mqttBroker retrieved from secrets.yaml in folder /config
+2021-10-19 18:26:43 DEBUG (SyncWorker_0) [homeassistant.util.yaml.loader] Secret mqttPort retrieved from secrets.yaml in folder /config
+2021-10-19 18:26:43 DEBUG (SyncWorker_0) [homeassistant.util.yaml.loader] Secret mqttUser retrieved from secrets.yaml in folder /config
+2021-10-19 18:26:43 DEBUG (SyncWorker_0) [homeassistant.util.yaml.loader] Secret mqttPassword retrieved from secrets.yaml in folder /config
+2021-10-19 18:26:43 DEBUG (SyncWorker_0) [homeassistant.util.yaml.loader] Secret iftttApiKey retrieved from secrets.yaml in folder /config
+2021-10-19 18:26:45 WARNING (Recorder) [homeassistant.components.recorder.util] Ended unfinished session (id=36 from 2021-10-18 05:20:57)
+2021-10-19 18:26:49 WARNING (MainThread) [homeassistant.components.speedtestdotnet] The 'speedtestdotnet' option near /config/configuration.yaml:0 is deprecated, please remove it from your configuration
+2021-10-19 18:26:49 WARNING (MainThread) [homeassistant.components.updater] Analytics reporting with the option 'include_used_components' is deprecated and you should remove that from your configuration. The analytics part of this integration has moved to the new 'analytics' integration
+2021-10-19 18:26:52 INFO (Thread-3) [homeassistant.components.mqtt] Connected to MQTT server mqtt:1883 (0)
+2021-10-19 18:26:52 DEBUG (MainThread) [homeassistant.components.mqtt] Subscribing to homeassistant/+/+/config, mid: 1
+2021-10-19 18:26:53 DEBUG (MainThread) [homeassistant.components.mqtt] Subscribing to homeassistant/+/+/+/config, mid: 2
+2021-10-19 18:26:54 DEBUG (MainThread) [homeassistant.components.mqtt] Subscribing to tasmota/discovery/#, mid: 3
+2021-10-19 18:26:56 ERROR (MainThread) [homeassistant.components.weather] Platform met does not generate unique IDs. ID home already exists - ignoring weather.met_no
+2021-10-19 18:26:56 ERROR (MainThread) [homeassistant.components.weather] Platform met does not generate unique IDs. ID home already exists - ignoring weather.met_no
+2021-10-19 18:26:56 ERROR (MainThread) [homeassistant.components.weather] Platform met does not generate unique IDs. ID home already exists - ignoring weather.met_no
+2021-10-19 18:26:56 ERROR (MainThread) [homeassistant.components.weather] Platform met does not generate unique IDs. ID home already exists - ignoring weather.met_no
+2021-10-19 18:26:56 ERROR (MainThread) [homeassistant.components.weather] Platform met does not generate unique IDs. ID home already exists - ignoring weather.met_no
+2021-10-19 18:26:56 ERROR (MainThread) [homeassistant.components.weather] Platform met does not generate unique IDs. ID home already exists - ignoring weather.met_no
+2021-10-19 18:26:57 WARNING (SyncWorker_3) [homeassistant.components.sonos] Failed to connect to configured player '192.168.86.42': HTTPConnectionPool(host='192.168.86.42', port=1400): Max retries exceeded with url: /xml/ZoneGroupTopology1.xml (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7fde82da43d0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2021-10-19 18:27:01 WARNING (MainThread) [homeassistant.components.sensor] Entity sensor.accumulated_consumption_current_hour_lindbackveien_1_cost (<class 'homeassistant.components.energy.sensor.EnergyCostSensor'>) with state_class measurement has set last_reset. Setting last_reset is deprecated and will be unsupported from Home Assistant Core 2021.11. Please update your configuration if state_class is manually configured, otherwise create a bug report at https://github.com/home-assistant/core/issues?q=is%3Aopen+is%3Aissue+label%3A%22integration%3A+energy%22
+2021-10-19 18:27:07 WARNING (MainThread) [homeassistant.components.sonos.entity] Kjøkken cannot reach 172.22.0.3:1400, falling back to polling, functionality may be limited
+2021-10-19 18:27:22 ERROR (MainThread) [homeassistant.components.google_assistant.smart_home] Error serializing scene.day_3
+Traceback (most recent call last):
+  File "/usr/src/homeassistant/homeassistant/components/google_assistant/helpers.py", line 515, in sync_serialize
+    "baseUrl": get_url(self.hass, prefer_external=True),
+  File "/usr/src/homeassistant/homeassistant/helpers/network.py", line 83, in get_url
+    request_host = _get_request_host()
+  File "/usr/src/homeassistant/homeassistant/helpers/network.py", line 123, in _get_request_host
+    raise NoURLAvailableError
+homeassistant.helpers.network.NoURLAvailableError
+2021-10-19 18:27:22 ERROR (MainThread) [homeassistant.components.google_assistant.smart_home] Error serializing scene.night
+Traceback (most recent call last):
+  File "/usr/src/homeassistant/homeassistant/components/google_assistant/helpers.py", line 515, in sync_serialize
+    "baseUrl": get_url(self.hass, prefer_external=True),
+  File "/usr/src/homeassistant/homeassistant/helpers/network.py", line 83, in get_url
+    request_host = _get_request_host()
+  File "/usr/src/homeassistant/homeassistant/helpers/network.py", line 123, in _get_request_host
+    raise NoURLAvailableError
+homeassistant.helpers.network.NoURLAvailableError
+2021-10-19 18:27:22 ERROR (MainThread) [homeassistant.components.google_assistant.smart_home] Error serializing scene.evening_2
+Traceback (most recent call last):
+  File "/usr/src/homeassistant/homeassistant/components/google_assistant/helpers.py", line 515, in sync_serialize
+    "baseUrl": get_url(self.hass, prefer_external=True),
+  File "/usr/src/homeassistant/homeassistant/helpers/network.py", line 83, in get_url
+    request_host = _get_request_host()
+  File "/usr/src/homeassistant/homeassistant/helpers/network.py", line 123, in _get_request_host
+    raise NoURLAvailableError
+homeassistant.helpers.network.NoURLAvailableError
+2021-10-19 18:27:22 ERROR (MainThread) [homeassistant.components.google_assistant.smart_home] Error serializing scene.away_2
+Traceback (most recent call last):
+  File "/usr/src/homeassistant/homeassistant/components/google_assistant/helpers.py", line 515, in sync_serialize
+    "baseUrl": get_url(self.hass, prefer_external=True),
+  File "/usr/src/homeassistant/homeassistant/helpers/network.py", line 83, in get_url
+    request_host = _get_request_host()
+  File "/usr/src/homeassistant/homeassistant/helpers/network.py", line 123, in _get_request_host
+    raise NoURLAvailableError
+homeassistant.helpers.network.NoURLAvailableError
+2021-10-19 18:27:22 ERROR (MainThread) [homeassistant.components.google_assistant.smart_home] Error serializing scene.nightlight_long_hall
+Traceback (most recent call last):
+  File "/usr/src/homeassistant/homeassistant/components/google_assistant/helpers.py", line 515, in sync_serialize
+    "baseUrl": get_url(self.hass, prefer_external=True),
+  File "/usr/src/homeassistant/homeassistant/helpers/network.py", line 83, in get_url
+    request_host = _get_request_host()
+  File "/usr/src/homeassistant/homeassistant/helpers/network.py", line 123, in _get_request_host
+    raise NoURLAvailableError
+homeassistant.helpers.network.NoURLAvailableError
+2021-10-19 18:27:22 ERROR (MainThread) [homeassistant.components.google_assistant.smart_home] Error serializing scene.test_scene_1
+Traceback (most recent call last):
+  File "/usr/src/homeassistant/homeassistant/components/google_assistant/helpers.py", line 515, in sync_serialize
+    "baseUrl": get_url(self.hass, prefer_external=True),
+  File "/usr/src/homeassistant/homeassistant/helpers/network.py", line 83, in get_url
+    request_host = _get_request_host()
+  File "/usr/src/homeassistant/homeassistant/helpers/network.py", line 123, in _get_request_host
+    raise NoURLAvailableError
+homeassistant.helpers.network.NoURLAvailableError
+2021-10-19 18:27:22 ERROR (MainThread) [homeassistant.components.google_assistant.smart_home] Error serializing scene.test_scene_2
+Traceback (most recent call last):
+  File "/usr/src/homeassistant/homeassistant/components/google_assistant/helpers.py", line 515, in sync_serialize
+    "baseUrl": get_url(self.hass, prefer_external=True),
+  File "/usr/src/homeassistant/homeassistant/helpers/network.py", line 83, in get_url
+    request_host = _get_request_host()
+  File "/usr/src/homeassistant/homeassistant/helpers/network.py", line 123, in _get_request_host
+    raise NoURLAvailableError
+homeassistant.helpers.network.NoURLAvailableError
+2021-10-19 18:27:22 ERROR (MainThread) [homeassistant.components.google_assistant.smart_home] Error serializing scene.test_scene_3
+Traceback (most recent call last):
+  File "/usr/src/homeassistant/homeassistant/components/google_assistant/helpers.py", line 515, in sync_serialize
+    "baseUrl": get_url(self.hass, prefer_external=True),
+  File "/usr/src/homeassistant/homeassistant/helpers/network.py", line 83, in get_url
+    request_host = _get_request_host()
+  File "/usr/src/homeassistant/homeassistant/helpers/network.py", line 123, in _get_request_host
+    raise NoURLAvailableError
+homeassistant.helpers.network.NoURLAvailableError
+2021-10-19 18:27:23 ERROR (MainThread) [homeassistant.components.google_assistant.smart_home] Error serializing scene.test_scene_4
+Traceback (most recent call last):
+  File "/usr/src/homeassistant/homeassistant/components/google_assistant/helpers.py", line 515, in sync_serialize
+    "baseUrl": get_url(self.hass, prefer_external=True),
+  File "/usr/src/homeassistant/homeassistant/helpers/network.py", line 83, in get_url
+    request_host = _get_request_host()
+  File "/usr/src/homeassistant/homeassistant/helpers/network.py", line 123, in _get_request_host
+    raise NoURLAvailableError
+homeassistant.helpers.network.NoURLAvailableError
+2021-10-19 18:27:23 ERROR (MainThread) [homeassistant.components.google_assistant.smart_home] Error serializing light.3_way_lamp
+Traceback (most recent call last):
+  File "/usr/src/homeassistant/homeassistant/components/google_assistant/helpers.py", line 515, in sync_serialize
+    "baseUrl": get_url(self.hass, prefer_external=True),
+  File "/usr/src/homeassistant/homeassistant/helpers/network.py", line 83, in get_url
+    request_host = _get_request_host()
+  File "/usr/src/homeassistant/homeassistant/helpers/network.py", line 123, in _get_request_host
+    raise NoURLAvailableError
+homeassistant.helpers.network.NoURLAvailableError
+2021-10-19 18:27:23 ERROR (MainThread) [homeassistant.components.google_assistant.smart_home] Error serializing script.long_hall_lights_of_when_no_brightnesschange
+Traceback (most recent call last):
+  File "/usr/src/homeassistant/homeassistant/components/google_assistant/helpers.py", line 515, in sync_serialize
+    "baseUrl": get_url(self.hass, prefer_external=True),
+  File "/usr/src/homeassistant/homeassistant/helpers/network.py", line 83, in get_url
+    request_host = _get_request_host()
+  File "/usr/src/homeassistant/homeassistant/helpers/network.py", line 123, in _get_request_host
+    raise NoURLAvailableError
+homeassistant.helpers.network.NoURLAvailableError
+2021-10-19 18:27:23 ERROR (MainThread) [homeassistant.components.google_assistant.smart_home] Error serializing binary_sensor.living_room_door
+Traceback (most recent call last):
+  File "/usr/src/homeassistant/homeassistant/components/google_assistant/helpers.py", line 515, in sync_serialize
+    "baseUrl": get_url(self.hass, prefer_external=True),
+  File "/usr/src/homeassistant/homeassistant/helpers/network.py", line 83, in get_url
+    request_host = _get_request_host()
+  File "/usr/src/homeassistant/homeassistant/helpers/network.py", line 123, in _get_request_host
+    raise NoURLAvailableError
+homeassistant.helpers.network.NoURLAvailableError
+2021-10-19 18:27:23 ERROR (MainThread) [homeassistant.components.google_assistant.smart_home] Error serializing binary_sensor.front_door
+Traceback (most recent call last):
+  File "/usr/src/homeassistant/homeassistant/components/google_assistant/helpers.py", line 515, in sync_serialize
+    "baseUrl": get_url(self.hass, prefer_external=True),
+  File "/usr/src/homeassistant/homeassistant/helpers/network.py", line 83, in get_url
+    request_host = _get_request_host()
+  File "/usr/src/homeassistant/homeassistant/helpers/network.py", line 123, in _get_request_host
+    raise NoURLAvailableError
+homeassistant.helpers.network.NoURLAvailableError
+2021-10-19 18:27:23 ERROR (MainThread) [homeassistant.components.google_assistant.smart_home] Error serializing binary_sensor.cooler_room_door
+Traceback (most recent call last):
+  File "/usr/src/homeassistant/homeassistant/components/google_assistant/helpers.py", line 515, in sync_serialize
+    "baseUrl": get_url(self.hass, prefer_external=True),
+  File "/usr/src/homeassistant/homeassistant/helpers/network.py", line 83, in get_url
+    request_host = _get_request_host()
+  File "/usr/src/homeassistant/homeassistant/helpers/network.py", line 123, in _get_request_host
+    raise NoURLAvailableError
+homeassistant.helpers.network.NoURLAvailableError
+2021-10-19 18:27:23 ERROR (MainThread) [homeassistant.components.google_assistant.smart_home] Error serializing climate.thermostat_guest_toilet
+Traceback (most recent call last):
+  File "/usr/src/homeassistant/homeassistant/components/google_assistant/helpers.py", line 515, in sync_serialize
+    "baseUrl": get_url(self.hass, prefer_external=True),
+  File "/usr/src/homeassistant/homeassistant/helpers/network.py", line 83, in get_url
+    request_host = _get_request_host()
+  File "/usr/src/homeassistant/homeassistant/helpers/network.py", line 123, in _get_request_host
+    raise NoURLAvailableError
+homeassistant.helpers.network.NoURLAvailableError
+2021-10-19 18:27:23 ERROR (MainThread) [homeassistant.components.google_assistant.smart_home] Error serializing climate.thermostat_master_bath
+Traceback (most recent call last):
+  File "/usr/src/homeassistant/homeassistant/components/google_assistant/helpers.py", line 515, in sync_serialize
+    "baseUrl": get_url(self.hass, prefer_external=True),
+  File "/usr/src/homeassistant/homeassistant/helpers/network.py", line 83, in get_url
+    request_host = _get_request_host()
+  File "/usr/src/homeassistant/homeassistant/helpers/network.py", line 123, in _get_request_host
+    raise NoURLAvailableError
+homeassistant.helpers.network.NoURLAvailableError
+2021-10-19 18:27:23 DEBUG (MainThread) [homeassistant.components.mqtt] Transmitting message on homeassistant/status: 'online', mid: 4
+2021-10-19 18:27:57 WARNING (SyncWorker_5) [homeassistant.components.sonos] Failed to connect to configured player '192.168.86.42': HTTPConnectionPool(host='192.168.86.42', port=1400): Max retries exceeded with url: /xml/ZoneGroupTopology1.xml (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7fde6f9823d0>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2021-10-19 18:28:57 WARNING (SyncWorker_2) [homeassistant.components.sonos] Failed to connect to configured player '192.168.86.42': HTTPConnectionPool(host='192.168.86.42', port=1400): Max retries exceeded with url: /xml/ZoneGroupTopology1.xml (Caused by NewConnectionError('<urllib3.connection.HTTPConnection object at 0x7fde705d2490>: Failed to establish a new connection: [Errno 111] Connection refused'))
+2021-10-19 18:29:39 ERROR (Recorder) [homeassistant.components.recorder] Database connection invalidated: Error executing query: (MySQLdb._exceptions.OperationalError) (1927, 'Connection was killed')
+[SQL: INSERT INTO events (event_type, event_data, origin, time_fired, created, context_id, context_user_id, context_parent_id) VALUES (%s, %s, %s, %s, %s, %s, %s, %s)]
+[parameters: ('homeassistant_stop', '{}', 'LOCAL', datetime.datetime(2021, 10, 19, 16, 29, 39, 219287, tzinfo=datetime.timezone.utc), datetime.datetime(2021, 10, 19, 16, 29, 39, 219287, tzinfo=datetime.timezone.utc), 'b7b4702a11cffa2a68c31da52f9b9ea0', None, None)]
+(Background on this error at: https://sqlalche.me/e/14/e3q8). (retrying in 3 seconds)
+2021-10-19 18:29:39 WARNING (Thread-3) [homeassistant.components.mqtt] Disconnected from MQTT server mqtt:1883 (1)
+2021-10-19 18:29:42 ERROR (Recorder) [homeassistant.components.recorder] Error saving the event session during shutdown: This Session's transaction has been rolled back due to a previous exception during flush. To begin a new transaction with this Session, first issue Session.rollback(). Original exception was: (MySQLdb._exceptions.OperationalError) (1927, 'Connection was killed')
+[SQL: INSERT INTO events (event_type, event_data, origin, time_fired, created, context_id, context_user_id, context_parent_id) VALUES (%s, %s, %s, %s, %s, %s, %s, %s)]
+[parameters: ('homeassistant_stop', '{}', 'LOCAL', datetime.datetime(2021, 10, 19, 16, 29, 39, 219287, tzinfo=datetime.timezone.utc), datetime.datetime(2021, 10, 19, 16, 29, 39, 219287, tzinfo=datetime.timezone.utc), 'b7b4702a11cffa2a68c31da52f9b9ea0', None, None)]
+(Background on this error at: https://sqlalche.me/e/14/e3q8) (Background on this error at: https://sqlalche.me/e/14/7s2a)
+Traceback (most recent call last):
+  File "/usr/src/homeassistant/homeassistant/components/recorder/__init__.py", line 1019, in _end_session
+    self._commit_event_session_or_retry()
+  File "/usr/src/homeassistant/homeassistant/components/recorder/__init__.py", line 840, in _commit_event_session_or_retry
+    self._commit_event_session()
+  File "/usr/src/homeassistant/homeassistant/components/recorder/__init__.py", line 866, in _commit_event_session
+    self.event_session.commit()
+  File "/usr/local/lib/python3.9/site-packages/sqlalchemy/orm/session.py", line 1428, in commit
+    self._transaction.commit(_to_root=self.future)
+  File "/usr/local/lib/python3.9/site-packages/sqlalchemy/orm/session.py", line 827, in commit
+    self._assert_active(prepared_ok=True)
+  File "/usr/local/lib/python3.9/site-packages/sqlalchemy/orm/session.py", line 601, in _assert_active
+    raise sa_exc.PendingRollbackError(
+sqlalchemy.exc.PendingRollbackError: This Session's transaction has been rolled back due to a previous exception during flush. To begin a new transaction with this Session, first issue Session.rollback(). Original exception was: (MySQLdb._exceptions.OperationalError) (1927, 'Connection was killed')
+[SQL: INSERT INTO events (event_type, event_data, origin, time_fired, created, context_id, context_user_id, context_parent_id) VALUES (%s, %s, %s, %s, %s, %s, %s, %s)]
+[parameters: ('homeassistant_stop', '{}', 'LOCAL', datetime.datetime(2021, 10, 19, 16, 29, 39, 219287, tzinfo=datetime.timezone.utc), datetime.datetime(2021, 10, 19, 16, 29, 39, 219287, tzinfo=datetime.timezone.utc), 'b7b4702a11cffa2a68c31da52f9b9ea0', None, None)]
+(Background on this error at: https://sqlalche.me/e/14/e3q8) (Background on this error at: https://sqlalche.me/e/14/7s2a)

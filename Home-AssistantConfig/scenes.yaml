@@ -26,6 +26,9 @@
       state: 'on'   
     switch.asian_girl_picture:
       state: 'on'   
+    light.green_table_lamp:
+      brightness: 255
+      state: 'on'
     light.long_hall_lights:
       brightness: 255
       state: 'on' 
@@ -78,6 +81,8 @@
       state: 'off'   
     switch.asian_girl_picture:
       state: 'off'   
+    light.green_table_lamp:
+      state: 'off'
     light.long_hall_lights:
       state: 'off' 
     light.hall_balloon: 
@@ -137,7 +142,14 @@
       state: 'on' 
     light.bird_lamp:
       brightness: 125
-      state: 'on' 
+      state: 'on'
+    switch.beatles_picture:
+      state: 'on'
+    switch.asian_girl_picture:
+      state: 'on'
+    light.green_table_lamp:
+      brightness: 200
+      state: 'on'
     light.long_hall_lights:
       brightness: 70
       state: 'on' 
@@ -173,6 +185,12 @@
       state: 'off' 
     light.bird_lamp:
       state: 'off' 
+    switch.beatles_picture:
+      state: 'off'
+    switch.asian_girl_picture:
+      state: 'off'
+    light.green_table_lamp:
+      state: 'off'
     light.long_hall_lights:
       state: 'off' 
     light.hall_balloon: 
