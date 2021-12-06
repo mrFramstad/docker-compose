@@ -10,8 +10,6 @@ persistence_location /mosquitto/data/
 #how often to save to the persistence file
 autosave_interval 1800
 
-listener 1883
-# Note that this will not allow anonymous access by default.
 
 # Control access to the broker using a password file. This file can be
 # generated using the mosquitto_passwd utility.
