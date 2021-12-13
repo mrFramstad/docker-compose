@@ -139,12 +139,22 @@ ifttt:
 # My personal device tracker
 #wifi_device_tracker:
 
-#weather:
-#  - platform: met
+#min_renovasjon:
+#  street_name: "Lindbäckveien"
+#  house_no: "1"
+#  street_code: "14324"
+#  county_id: "0301"
+#  date_format: "None"
 
-# Weather prediction
+min_renovasjon:
+  street_name: "Tyslevveien"
+  house_no: "59"
+  street_code: "17866"
+  county_id: "0301"
+  date_format: "None"
+
 sensor:
-  - platform: google_wifi
+  #- platform: google_wifi
   - platform: moon
   # Entur public transportation
   - platform: entur_public_transport
@@ -153,6 +163,21 @@ sensor:
     show_on_map: true
     stop_ids:
       - "NSR:StopPlace:58303"
+  - platform: nordpool
+    region: "Oslo"
+    low_price_cutoff: 0.95
+    price_type: kWh
+    precision: 3
+  - platform: avanza_stock
+    stock:
+      - id: 52510
+        name: Schibsted A
+  - platform: min_renovasjon
+    fraction_id:
+      - 1
+      - 2
+
+
 
 speedtestdotnet:
   scan_interval:
@@ -172,25 +197,6 @@ speedtestdotnet:
 
 # Cloud
 cloud:
-  google_actions:
-    filter:
-      include_entities:
-        - light.hjornelampe
-        - scene.day
-        - scene.evening
-        - scene.light
-      include_domains:
-        - switch
-        - scene
-      #exclude_entities:
-      #- switch.outside
-    #entity_config:
-    #switch.kitchen:
-    #  name: Custom Name for Google Assistant
-    #  aliases:
-    #   - bright lights
-    #   - entry lights
-    #  room: living room
 
 sonos:
   media_player:
@@ -216,4 +222,9 @@ light:
     entities:
       - light.stue_hvit
       - light.stue_lilla
-      - light.stue_orange       
+      - light.stue_orange
+
+
+
+
+      
