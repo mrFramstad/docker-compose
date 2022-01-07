@@ -234,3 +234,37 @@
     entity_id: switch.bonsai_light
     domain: switch
   mode: single
+- id: '1640617824286'
+  alias: Varsle om henting av papir hjemme
+  description: ''
+  trigger:
+  - platform: time
+    at: '17:00:00'
+  condition:
+  - condition: state
+    entity_id: sensor.lindbackveien_1_papir
+    state: '1'
+  action:
+    service: notify.notify
+    data_template:
+      message: 'Restavfall hentes i morgen. Er det noe søppel som skal settes ut?'
+  mode: single
+  trace:
+    stored_traces: 1
+- id: '1640618152608'
+  alias: Varsle om henting av restavfall hjemme
+  description: ''
+  trigger:
+  - platform: time
+    at: '17:00:00'
+  condition:
+  - condition: state
+    entity_id: sensor.lindbackveien_1_restavfall
+    state: '1'
+  action:
+    service: notify.notify
+    data_template:
+      message: 'Restavfall hentes i morgen. Er det noe søppel som skal settes ut?'
+  mode: single
+  trace:
+    stored_traces: 1

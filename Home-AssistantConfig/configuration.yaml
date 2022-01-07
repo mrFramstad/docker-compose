@@ -49,9 +49,11 @@ logbook:
 logger:
   default: warning
   logs:
-    homeassistant.components.mqtt: debug
-    homeassistant.config.automation: debug
-#    homeassistant.components.zwave: debug
+    #homeassistant.components.mqtt: debug
+    #homeassistant.config.automation: debug
+    #homeassistant.config.automation: debug
+    custom_components.min_renovasjon: debug
+    #homeassistant.components.zwave: debug
 
 # Enables configuration UI
 config:
@@ -147,11 +149,11 @@ ifttt:
 #  date_format: "None"
 
 min_renovasjon:
-  street_name: "Tyslevveien"
-  house_no: "59"
-  street_code: "17866"
-  county_id: "0301"
-  date_format: "None"
+  street_name: "Selvigskogen"
+  house_no: "28"
+  street_code: "31286"
+  county_id: "3025"
+  date_format: "%d/%m/%Y"
 
 sensor:
   #- platform: google_wifi
@@ -176,7 +178,19 @@ sensor:
     fraction_id:
       - 1
       - 2
-
+  - platform: oslo_waste
+    address: 'Lindbäckveien 1'
+  - platform: min_renovasjon
+    fraction_id:
+      - 1
+      - 2
+      - 3
+      - 19
+  - platform: template
+    sensors:
+      meldt_tempratur:
+        friendly_name: "Meldt utetempratur"
+        value_template: "{{ state_attr('weather.met_no', 'temperature') }}"
 
 
 speedtestdotnet:
@@ -198,11 +212,11 @@ speedtestdotnet:
 # Cloud
 cloud:
 
-sonos:
-  media_player:
-    hosts:
-      - 192.168.86.233
-      - 192.168.86.42
+#sonos:
+  #media_player:
+  #  hosts:
+  #    - 192.168.86.233
+  #    - 192.168.86.42
 
 ios:
 
